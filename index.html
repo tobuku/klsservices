@@ -433,6 +433,23 @@
       color: var(--orange);
       font-weight: 500;
     }
+    .service-card.full-width { grid-column: span 2; }
+    .landscaping-photos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+      height: 240px;
+    }
+    .landscaping-photos img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.55) saturate(0.7);
+      transition: filter 0.3s;
+    }
+    .service-card:hover .landscaping-photos img { filter: brightness(0.68) saturate(0.85); }
+    @media (max-width: 560px) { .service-card.full-width { grid-column: span 1; } .landscaping-photos { grid-template-columns: 1fr; height: auto; } .landscaping-photos img { height: 160px; } }
 
     /* ── PHOTO GALLERY ───────────────────────────────────── */
     #gallery {
@@ -859,6 +876,30 @@
         </div>
       </div>
 
+      <!-- Landscaping -->
+      <div class="service-card full-width reveal">
+        <div class="landscaping-photos">
+          <img src="images/IMG_2867.JPG" alt="Hawaii landscape maintenance">
+          <img src="images/IMG_3162.JPG" alt="Residential tree and grounds care">
+          <img src="images/IMG_4130.JPG" alt="Lawn maintenance and care">
+        </div>
+        <span class="service-number">05</span>
+        <div class="service-body">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 40V20"/>
+              <path d="M24 20c0-8 8-14 8-14s0 10-8 14"/>
+              <path d="M24 28c0-6-8-10-8-10s2 8 8 10"/>
+              <path d="M12 40h24"/>
+              <path d="M8 40h32"/>
+            </svg>
+          </div>
+          <h3>Landscaping</h3>
+          <p class="service-desc">Lawn care, tree trimming, brush clearing, and grounds maintenance for residential and commercial properties across Hawaii. We keep your property looking its best year-round.</p>
+          <span class="service-tag">Residential &amp; Commercial</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1033,6 +1074,7 @@
         <span>Hoarder Cleanouts</span>
         <span>Rent Ready</span>
         <span>Pressure Washing</span>
+        <span>Landscaping</span>
       </div>
       <div class="footer-copy">&copy; 2025 KLS Services. All rights reserved.</div>
     </div>
