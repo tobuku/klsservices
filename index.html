@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="KLS Services — Professional junk removal, hoarder cleanouts, rent ready showcasing, and pressure washing for residential and commercial properties.">
+  <meta name="description" content="KLS Services — Professional junk removal, hoarder cleanouts, rent ready showcasing, and pressure washing for residential and commercial properties in Hawaii.">
   <title>KLS Services | Junk Removal, Cleanouts & Pressure Washing</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,13 +49,17 @@
     }
     .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.55s ease, transform 0.55s ease; }
     .reveal.visible { opacity: 1; transform: none; }
+    .reveal-d1 { transition-delay: 0.1s; }
+    .reveal-d2 { transition-delay: 0.2s; }
+    .reveal-d3 { transition-delay: 0.3s; }
+    .reveal-d4 { transition-delay: 0.4s; }
 
     /* ── NAV ─────────────────────────────────────────────── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(9,9,9,0.92);
+      background: rgba(9,9,9,0.94);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
@@ -125,28 +129,40 @@
       padding-top: 66px;
       overflow: hidden;
     }
-    .hero-bg {
+    .hero-bg-photo {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/IMG_5826.JPG');
+      background-size: cover;
+      background-position: center 30%;
+      filter: brightness(0.22) saturate(0.4);
+    }
+    .hero-bg-overlay {
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 60% 50% at 70% 40%, rgba(200,200,200,0.04) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 60% at 20% 80%, rgba(224,112,32,0.06) 0%, transparent 60%),
-        var(--bg);
+        linear-gradient(105deg, rgba(9,9,9,0.96) 0%, rgba(9,9,9,0.75) 55%, rgba(9,9,9,0.45) 100%),
+        radial-gradient(ellipse 50% 80% at 0% 50%, rgba(224,112,32,0.07) 0%, transparent 70%);
     }
     .hero-grid-lines {
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
       background-size: 60px 60px;
       pointer-events: none;
     }
-    .hero-content {
+    .hero-layout {
       position: relative;
       z-index: 2;
-      max-width: 760px;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 60px;
+      align-items: center;
+      width: 100%;
     }
+    .hero-content {}
     .hero-eyebrow {
       display: inline-flex;
       align-items: center;
@@ -166,7 +182,7 @@
     }
     h1 {
       font-family: 'Oswald', sans-serif;
-      font-size: clamp(48px, 8vw, 88px);
+      font-size: clamp(44px, 6.5vw, 82px);
       font-weight: 700;
       line-height: 1.0;
       letter-spacing: -0.01em;
@@ -179,10 +195,10 @@
       color: var(--orange);
     }
     .hero-sub {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 300;
       color: var(--silver-lo);
-      max-width: 540px;
+      max-width: 500px;
       margin-bottom: 40px;
       line-height: 1.7;
     }
@@ -190,7 +206,7 @@
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
-      margin-bottom: 56px;
+      margin-bottom: 48px;
     }
     .btn-primary {
       background: var(--orange);
@@ -242,24 +258,37 @@
       background: var(--orange);
       flex-shrink: 0;
     }
-    .hero-logo-display {
-      position: absolute;
-      right: -40px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 420px;
-      opacity: 0.18;
-      pointer-events: none;
-      z-index: 1;
+
+    /* ── HERO LOGO DISPLAY ───────────────────────────────── */
+    .hero-logo-panel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
     }
-    .hero-logo-display img { width: 100%; }
+    .hero-logo-glow {
+      position: absolute;
+      inset: -30px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse at center, rgba(200,200,200,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-logo-main {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 12px;
+      display: block;
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0 0 40px rgba(180,180,180,0.12)) drop-shadow(0 0 80px rgba(180,180,180,0.06));
+      border: 1px solid rgba(255,255,255,0.06);
+    }
 
     /* ── STATS BAR ───────────────────────────────────────── */
     #stats {
       background: var(--surface);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
-      padding: 0;
     }
     .stats-grid {
       display: grid;
@@ -288,12 +317,8 @@
     }
 
     /* ── SERVICES ────────────────────────────────────────── */
-    #services {
-      padding: 100px 0;
-    }
-    .section-header {
-      margin-bottom: 60px;
-    }
+    #services { padding: 100px 0; }
+    .section-header { margin-bottom: 60px; }
     h2 {
       font-family: 'Oswald', sans-serif;
       font-size: clamp(32px, 5vw, 52px);
@@ -317,12 +342,10 @@
     }
     .service-card {
       background: var(--surface);
-      padding: 44px 40px;
       border: 1px solid var(--border);
       position: relative;
       overflow: hidden;
       transition: border-color 0.25s, background 0.25s;
-      cursor: default;
     }
     .service-card::before {
       content: '';
@@ -332,20 +355,42 @@
       height: 0;
       background: var(--orange);
       transition: height 0.3s ease;
+      z-index: 2;
     }
     .service-card:hover { border-color: #333; background: var(--surface2); }
     .service-card:hover::before { height: 100%; }
+
+    /* service photo header */
+    .service-photo {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.55) saturate(0.6);
+      transition: filter 0.3s;
+    }
+    .service-card:hover .service-photo { filter: brightness(0.65) saturate(0.7); }
+    .service-photo-placeholder {
+      width: 100%;
+      height: 200px;
+      background: var(--surface2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .service-body { padding: 32px 36px 36px; }
     .service-icon {
-      width: 52px;
-      height: 52px;
-      margin-bottom: 24px;
+      width: 48px;
+      height: 48px;
+      margin-bottom: 18px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
     .service-icon svg {
-      width: 42px;
-      height: 42px;
+      width: 38px;
+      height: 38px;
       stroke: var(--silver-lo);
       fill: none;
       stroke-width: 1.4;
@@ -356,13 +401,14 @@
     .service-card:hover .service-icon svg { stroke: var(--orange); }
     .service-number {
       position: absolute;
-      top: 24px; right: 28px;
+      top: 16px; right: 20px;
       font-family: 'Oswald', sans-serif;
-      font-size: 64px;
+      font-size: 52px;
       font-weight: 700;
-      color: rgba(255,255,255,0.03);
+      color: rgba(255,255,255,0.06);
       line-height: 1;
       pointer-events: none;
+      z-index: 1;
     }
     h3 {
       font-family: 'Oswald', sans-serif;
@@ -371,7 +417,7 @@
       text-transform: uppercase;
       letter-spacing: 0.06em;
       color: var(--silver-hi);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     .service-desc {
       font-size: 15px;
@@ -380,7 +426,7 @@
     }
     .service-tag {
       display: inline-block;
-      margin-top: 20px;
+      margin-top: 18px;
       font-size: 11px;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -388,13 +434,58 @@
       font-weight: 500;
     }
 
-    /* ── WHY KLS ─────────────────────────────────────────── */
-    #why {
+    /* ── PHOTO GALLERY ───────────────────────────────────── */
+    #gallery {
       padding: 100px 0;
       background: var(--surface);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
+    .gallery-header {
+      margin-bottom: 48px;
+    }
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: 4px;
+    }
+    .photo-grid-item {
+      overflow: hidden;
+      position: relative;
+    }
+    .photo-grid-item.wide {
+      grid-column: span 2;
+    }
+    .photo-grid-item img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.7) saturate(0.7);
+      transition: filter 0.4s ease, transform 0.4s ease;
+    }
+    .photo-grid-item.wide img { height: 280px; }
+    .photo-grid-item:hover img {
+      filter: brightness(0.9) saturate(0.85);
+      transform: scale(1.03);
+    }
+    .photo-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 20px 16px 14px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.7));
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--silver-lo);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .photo-grid-item:hover .photo-caption { opacity: 1; }
+
+    /* ── WHY KLS ─────────────────────────────────────────── */
+    #why { padding: 100px 0; }
     .why-layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -414,46 +505,29 @@
       gap: 16px;
     }
     .why-feature {
-      background: var(--bg);
+      background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 20px;
       transition: border-color 0.2s;
     }
     .why-feature:hover { border-color: var(--orange); }
-    .why-feature-icon {
-      width: 32px;
-      height: 32px;
-      margin-bottom: 10px;
-    }
+    .why-feature-icon { width: 32px; height: 32px; margin-bottom: 10px; }
     .why-feature-icon svg {
-      width: 28px;
-      height: 28px;
-      stroke: var(--orange);
-      fill: none;
-      stroke-width: 1.5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+      width: 28px; height: 28px;
+      stroke: var(--orange); fill: none;
+      stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
     }
     .why-feature h4 {
       font-family: 'Oswald', sans-serif;
-      font-size: 14px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--silver-hi);
-      margin-bottom: 4px;
+      font-size: 14px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--silver-hi); margin-bottom: 4px;
     }
-    .why-feature p {
-      font-size: 13px;
-      color: var(--silver-lo);
-      line-height: 1.5;
-    }
+    .why-feature p { font-size: 13px; color: var(--silver-lo); line-height: 1.5; }
 
     /* ── PROCESS ─────────────────────────────────────────── */
-    #process {
-      padding: 100px 0;
-    }
+    #process { padding: 100px 0; background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
     .process-steps {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -464,58 +538,32 @@
     .process-steps::after {
       content: '';
       position: absolute;
-      top: 28px;
-      left: calc(12.5%);
-      right: calc(12.5%);
+      top: 28px; left: calc(12.5%); right: calc(12.5%);
       height: 1px;
       background: var(--border);
       z-index: 0;
     }
-    .process-step {
-      padding: 0 24px;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
+    .process-step { padding: 0 24px; text-align: center; position: relative; z-index: 1; }
     .step-num {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--bg); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
       margin: 0 auto 20px;
-      font-family: 'Oswald', sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--orange);
+      font-family: 'Oswald', sans-serif; font-size: 18px; font-weight: 700; color: var(--orange);
       position: relative;
     }
     .step-num::before {
-      content: '';
-      position: absolute;
-      inset: -4px;
-      border-radius: 50%;
-      border: 1px solid var(--border);
+      content: ''; position: absolute; inset: -4px;
+      border-radius: 50%; border: 1px solid var(--border);
     }
     .process-step h4 {
-      font-family: 'Oswald', sans-serif;
-      font-size: 16px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--silver-hi);
-      margin-bottom: 8px;
+      font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--silver-hi); margin-bottom: 8px;
     }
-    .process-step p {
-      font-size: 13px;
-      color: var(--silver-lo);
-      line-height: 1.55;
-    }
+    .process-step p { font-size: 13px; color: var(--silver-lo); line-height: 1.55; }
 
-    /* ── CTA STRIP ───────────────────────────────────────── */
+    /* ── CTA ─────────────────────────────────────────────── */
     #cta {
       padding: 0;
       background: linear-gradient(135deg, #0f0f0f 0%, #151515 50%, #0a0a0a 100%);
@@ -528,38 +576,21 @@
       align-items: center;
       padding: 72px 0;
     }
-    .cta-text h2 {
-      margin-bottom: 12px;
-    }
-    .cta-text p {
-      font-size: 16px;
-      color: var(--silver-lo);
-      max-width: 480px;
-    }
+    .cta-text h2 { margin-bottom: 12px; }
+    .cta-text p { font-size: 16px; color: var(--silver-lo); max-width: 480px; }
     .cta-actions {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      align-items: flex-end;
-      flex-shrink: 0;
+      display: flex; flex-direction: column; gap: 12px;
+      align-items: flex-end; flex-shrink: 0;
     }
     .phone-link {
       font-family: 'Oswald', sans-serif;
-      font-size: 28px;
-      font-weight: 700;
+      font-size: 30px; font-weight: 700;
       color: var(--silver-hi);
-      text-decoration: none;
-      letter-spacing: 0.04em;
-      transition: color 0.2s;
-      white-space: nowrap;
+      text-decoration: none; letter-spacing: 0.04em;
+      transition: color 0.2s; white-space: nowrap;
     }
     .phone-link:hover { color: var(--orange); }
-    .cta-note {
-      font-size: 12px;
-      color: var(--silver-lo);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
+    .cta-note { font-size: 12px; color: var(--silver-lo); letter-spacing: 0.1em; text-transform: uppercase; }
 
     /* ── FOOTER ──────────────────────────────────────────── */
     footer {
@@ -568,44 +599,26 @@
       padding: 40px 0;
     }
     .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      flex-wrap: wrap;
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 24px; flex-wrap: wrap;
     }
-    .footer-logo img {
-      height: 38px;
-      width: auto;
-      opacity: 0.7;
-    }
-    .footer-services {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+    .footer-logo img { height: 38px; width: auto; opacity: 0.7; }
+    .footer-services { display: flex; gap: 20px; flex-wrap: wrap; }
     .footer-services span {
-      font-size: 12px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--silver-lo);
+      font-size: 12px; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--silver-lo);
     }
-    .footer-copy {
-      font-size: 12px;
-      color: #444;
-    }
-
-    /* ── SCROLL REVEAL STAGGER ───────────────────────────── */
-    .reveal-d1 { transition-delay: 0.1s; }
-    .reveal-d2 { transition-delay: 0.2s; }
-    .reveal-d3 { transition-delay: 0.3s; }
-    .reveal-d4 { transition-delay: 0.4s; }
+    .footer-copy { font-size: 12px; color: #444; }
 
     /* ── RESPONSIVE ──────────────────────────────────────── */
-    @media (max-width: 900px) {
+    @media (max-width: 960px) {
+      .hero-layout { grid-template-columns: 1fr; gap: 48px; }
+      .hero-logo-panel { order: -1; }
+      .hero-logo-main { max-width: 300px; margin: 0 auto; }
       .nav-links, .btn-nav { display: none; }
       .nav-mobile-toggle { display: flex; }
-      .hero-logo-display { display: none; }
+    }
+    @media (max-width: 900px) {
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .stat-item:nth-child(2) { border-right: none; }
       .stat-item:nth-child(3) { border-right: 1px solid var(--border); }
@@ -615,6 +628,8 @@
       .process-steps::after { display: none; }
       .cta-inner { grid-template-columns: 1fr; gap: 32px; }
       .cta-actions { align-items: flex-start; }
+      .photo-grid { grid-template-columns: 1fr 1fr; }
+      .photo-grid-item.wide { grid-column: span 2; }
     }
     @media (max-width: 560px) {
       .stats-grid { grid-template-columns: 1fr 1fr; }
@@ -622,26 +637,21 @@
       .process-steps { grid-template-columns: 1fr; }
       .hero-actions { flex-direction: column; }
       .btn-primary, .btn-secondary { text-align: center; }
+      .photo-grid { grid-template-columns: 1fr; }
+      .photo-grid-item.wide { grid-column: span 1; }
     }
 
     /* ── MOBILE NAV ──────────────────────────────────────── */
     .mobile-nav {
-      display: none;
-      flex-direction: column;
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      padding: 16px 24px;
-      gap: 4px;
+      display: none; flex-direction: column;
+      background: var(--surface); border-top: 1px solid var(--border);
+      padding: 16px 24px; gap: 4px;
     }
     .mobile-nav.open { display: flex; }
     .mobile-nav a {
-      color: var(--silver-lo);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 10px 0;
+      color: var(--silver-lo); text-decoration: none;
+      font-size: 14px; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 10px 0;
       border-bottom: 1px solid var(--border);
     }
     .mobile-nav a:last-child { border-bottom: none; color: var(--orange); }
@@ -657,43 +667,54 @@
     </a>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Our Work</a></li>
       <li><a href="#why">Why KLS</a></li>
       <li><a href="#process">How It Works</a></li>
     </ul>
-    <a href="#cta" class="btn-nav">Get a Free Quote</a>
+    <a href="tel:+18085366075" class="btn-nav">808-536-6075</a>
     <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
   </div>
   <div class="mobile-nav" id="mobileNav">
     <a href="#services" onclick="closeMobileNav()">Services</a>
+    <a href="#gallery" onclick="closeMobileNav()">Our Work</a>
     <a href="#why" onclick="closeMobileNav()">Why KLS</a>
     <a href="#process" onclick="closeMobileNav()">How It Works</a>
-    <a href="#cta" onclick="closeMobileNav()">Get a Free Quote</a>
+    <a href="tel:+18085366075" onclick="closeMobileNav()">808-536-6075</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-bg"></div>
+  <div class="hero-bg-photo"></div>
+  <div class="hero-bg-overlay"></div>
   <div class="hero-grid-lines"></div>
-  <div class="hero-logo-display" aria-hidden="true">
-    <img src="images/kls-services-logo.jpg" alt="">
-  </div>
   <div class="container">
-    <div class="hero-content">
-      <div class="hero-eyebrow reveal">Residential &amp; Commercial</div>
-      <h1 class="reveal reveal-d1">We Haul It.<br><em>Clean It.</em><br>Restore It.</h1>
-      <p class="hero-sub reveal reveal-d2">KLS Services delivers fast, professional junk removal, hoarder cleanouts, rent-ready prep, and pressure washing. One call handles it all.</p>
-      <div class="hero-actions reveal reveal-d3">
-        <a href="#cta" class="btn-primary">Get a Free Quote</a>
-        <a href="#services" class="btn-secondary">View Services</a>
+    <div class="hero-layout">
+
+      <!-- Text -->
+      <div class="hero-content">
+        <div class="hero-eyebrow reveal">Residential &amp; Commercial — Hawaii</div>
+        <h1 class="reveal reveal-d1">We Haul It.<br><em>Clean It.</em><br>Restore It.</h1>
+        <p class="hero-sub reveal reveal-d2">KLS Services delivers fast, professional junk removal, hoarder cleanouts, rent-ready prep, and pressure washing. One call handles it all.</p>
+        <div class="hero-actions reveal reveal-d3">
+          <a href="tel:+18085366075" class="btn-primary">Call 808-536-6075</a>
+          <a href="#services" class="btn-secondary">View Services</a>
+        </div>
+        <div class="hero-trust reveal reveal-d4">
+          <div class="trust-badge"><span class="dot"></span>Licensed &amp; Insured</div>
+          <div class="trust-badge"><span class="dot"></span>Same-Day Available</div>
+          <div class="trust-badge"><span class="dot"></span>Free Estimates</div>
+        </div>
       </div>
-      <div class="hero-trust reveal reveal-d4">
-        <div class="trust-badge"><span class="dot"></span>Licensed &amp; Insured</div>
-        <div class="trust-badge"><span class="dot"></span>Same-Day Available</div>
-        <div class="trust-badge"><span class="dot"></span>Free Estimates</div>
+
+      <!-- Prominent Logo -->
+      <div class="hero-logo-panel reveal reveal-d2">
+        <div class="hero-logo-glow"></div>
+        <img src="images/kls-services-logo.jpg" alt="KLS Services" class="hero-logo-main">
       </div>
+
     </div>
   </div>
 </section>
@@ -734,76 +755,143 @@
 
       <!-- Junk Removal -->
       <div class="service-card reveal">
-        <span class="service-number">01</span>
-        <div class="service-icon">
-          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-            <rect x="6" y="20" width="36" height="22" rx="2"/>
-            <path d="M4 20h40"/>
-            <path d="M16 20V14a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6"/>
-            <circle cx="14" cy="40" r="3"/>
-            <circle cx="34" cy="40" r="3"/>
-            <path d="M6 28h36"/>
-          </svg>
+        <div class="service-photo-placeholder">
+          <div class="service-icon" style="transform:scale(2); opacity:0.2;">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="20" width="36" height="22" rx="2"/>
+              <path d="M4 20h40"/><path d="M16 20V14a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6"/>
+              <circle cx="14" cy="40" r="3"/><circle cx="34" cy="40" r="3"/>
+              <path d="M6 28h36"/>
+            </svg>
+          </div>
         </div>
-        <h3>Junk Removal</h3>
-        <p class="service-desc">Residential and commercial haul-away for garages, attics, offices, warehouses, and construction sites. Single items to full truckloads — we clear it all fast and responsibly.</p>
-        <span class="service-tag">Residential &amp; Commercial</span>
+        <span class="service-number">01</span>
+        <div class="service-body">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="20" width="36" height="22" rx="2"/>
+              <path d="M4 20h40"/><path d="M16 20V14a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6"/>
+              <circle cx="14" cy="40" r="3"/><circle cx="34" cy="40" r="3"/>
+              <path d="M6 28h36"/>
+            </svg>
+          </div>
+          <h3>Junk Removal</h3>
+          <p class="service-desc">Residential and commercial haul-away for garages, attics, offices, warehouses, and construction sites. Single items to full truckloads — we clear it all fast and responsibly.</p>
+          <span class="service-tag">Residential &amp; Commercial</span>
+        </div>
       </div>
 
       <!-- Hoarder Cleanouts -->
       <div class="service-card reveal reveal-d1">
-        <span class="service-number">02</span>
-        <div class="service-icon">
-          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8 38V18L24 8l16 10v20H8z"/>
-            <rect x="18" y="28" width="12" height="10" rx="1"/>
-            <path d="M14 22h4M30 22h4M14 28h4M30 28h4"/>
-            <path d="M20 18h8"/>
-          </svg>
+        <div class="service-photo-placeholder">
+          <div class="service-icon" style="transform:scale(2); opacity:0.2;">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 38V18L24 8l16 10v20H8z"/>
+              <rect x="18" y="28" width="12" height="10" rx="1"/>
+              <path d="M14 22h4M30 22h4"/>
+            </svg>
+          </div>
         </div>
-        <h3>Hoarder Cleanouts</h3>
-        <p class="service-desc">Severely cluttered homes require a careful hand. We approach every cleanout with professionalism and respect, removing debris and restoring the space — no matter the condition.</p>
-        <span class="service-tag">Compassionate &amp; Discreet</span>
+        <span class="service-number">02</span>
+        <div class="service-body">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 38V18L24 8l16 10v20H8z"/>
+              <rect x="18" y="28" width="12" height="10" rx="1"/>
+              <path d="M14 22h4M30 22h4M14 28h4M30 28h4"/>
+              <path d="M20 18h8"/>
+            </svg>
+          </div>
+          <h3>Hoarder Cleanouts</h3>
+          <p class="service-desc">Severely cluttered homes require a careful hand. We approach every cleanout with professionalism and respect, removing debris and restoring the space — no matter the condition.</p>
+          <span class="service-tag">Compassionate &amp; Discreet</span>
+        </div>
       </div>
 
-      <!-- Rent Ready Showcasing -->
+      <!-- Rent Ready -->
       <div class="service-card reveal reveal-d2">
-        <span class="service-number">03</span>
-        <div class="service-icon">
-          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 38V20L24 8l18 12v18H6z"/>
-            <path d="M18 38V28h12v10"/>
-            <path d="M24 14v4"/>
-            <circle cx="30" cy="18" r="2"/>
-            <path d="M34 26l4-4"/>
-            <path d="M34 22l2 2-6 6-2-2z"/>
-          </svg>
+        <div class="service-photo-placeholder">
+          <div class="service-icon" style="transform:scale(2); opacity:0.2;">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 38V20L24 8l18 12v18H6z"/>
+              <path d="M18 38V28h12v10"/>
+              <path d="M34 22l4-4M34 18l2 2-6 6-2-2z"/>
+            </svg>
+          </div>
         </div>
-        <h3>Rent Ready Showcasing</h3>
-        <p class="service-desc">Preparing a rental or listing a property? We handle the haul-out, deep cleanout, and detail work that gets a space show-ready fast — so your unit rents or sells at top value.</p>
-        <span class="service-tag">Landlords &amp; Property Managers</span>
+        <span class="service-number">03</span>
+        <div class="service-body">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 38V20L24 8l18 12v18H6z"/>
+              <path d="M18 38V28h12v10"/>
+              <path d="M24 14v4"/>
+              <circle cx="30" cy="18" r="2"/>
+              <path d="M34 26l4-4M34 22l2 2-6 6-2-2z"/>
+            </svg>
+          </div>
+          <h3>Rent Ready Showcasing</h3>
+          <p class="service-desc">Preparing a rental or listing a property? We handle the haul-out, deep cleanout, and detail work that gets a space show-ready fast — so your unit rents or sells at top value.</p>
+          <span class="service-tag">Landlords &amp; Property Managers</span>
+        </div>
       </div>
 
       <!-- Pressure Washing -->
       <div class="service-card reveal reveal-d3">
+        <img src="images/IMG_5826.JPG" alt="Commercial pressure washing" class="service-photo">
         <span class="service-number">04</span>
-        <div class="service-icon">
-          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 10h6l4 8"/>
-            <path d="M22 18l14 14"/>
-            <path d="M36 32l4 4-2 2-4-4"/>
-            <path d="M28 36l4 4"/>
-            <path d="M6 16c0-2 2-4 6-4"/>
-            <path d="M30 10c4 2 6 6 4 10"/>
-            <path d="M18 26l-8 8"/>
-            <circle cx="12" cy="36" r="2"/>
-          </svg>
+        <div class="service-body">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 10h6l4 8"/>
+              <path d="M22 18l14 14"/>
+              <path d="M36 32l4 4-2 2-4-4"/>
+              <path d="M28 36l4 4"/>
+              <path d="M6 16c0-2 2-4 6-4"/>
+              <path d="M30 10c4 2 6 6 4 10"/>
+              <path d="M18 26l-8 8"/>
+              <circle cx="12" cy="36" r="2"/>
+            </svg>
+          </div>
+          <h3>Pressure Washing</h3>
+          <p class="service-desc">Commercial rooftops, driveways, sidewalks, building exteriors, fences, and decks blasted clean. We restore surfaces to like-new using professional-grade equipment and technique.</p>
+          <span class="service-tag">Residential &amp; Commercial</span>
         </div>
-        <h3>Pressure Washing</h3>
-        <p class="service-desc">Driveways, sidewalks, building exteriors, fences, and decks blasted clean. We restore surfaces to a like-new appearance using professional-grade equipment and technique.</p>
-        <span class="service-tag">Residential &amp; Commercial</span>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO GALLERY -->
+<section id="gallery">
+  <div class="container">
+    <div class="gallery-header reveal">
+      <div class="section-label">Our Work</div>
+      <h2>Real Jobs. Real Results.</h2>
+      <p class="section-sub">A look at what KLS Services does every day across Hawaii — pressure washing, landscaping, and property services.</p>
+    </div>
+    <div class="photo-grid">
+      <div class="photo-grid-item wide reveal">
+        <img src="images/%5B044705%5D.jpg" alt="Commercial warehouse roof pressure washing">
+        <div class="photo-caption">Commercial Roof Pressure Washing</div>
+      </div>
+      <div class="photo-grid-item reveal reveal-d1">
+        <img src="images/pressure%20wash%202_4.JPG" alt="Flat roof and solar panel pressure washing">
+        <div class="photo-caption">Solar Panel &amp; Roof Cleaning</div>
+      </div>
+      <div class="photo-grid-item reveal reveal-d2">
+        <img src="images/pressure%20wash%201_9.JPG" alt="Pressure washing solar panels">
+        <div class="photo-caption">Pressure Washing Services</div>
+      </div>
+      <div class="photo-grid-item reveal reveal-d3">
+        <img src="images/IMG_5826.JPG" alt="Rooftop pressure washing Honolulu">
+        <div class="photo-caption">Commercial Rooftop — Honolulu</div>
+      </div>
+      <div class="photo-grid-item wide reveal reveal-d1">
+        <img src="images/IMG_2867.JPG" alt="Hawaii landscape maintenance">
+        <div class="photo-caption">Landscaping &amp; Grounds</div>
+      </div>
     </div>
   </div>
 </section>
@@ -831,8 +919,7 @@
         <div class="why-feature reveal reveal-d2">
           <div class="why-feature-icon">
             <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="16" cy="16" r="12"/>
-              <path d="M16 8v8l5 3"/>
+              <circle cx="16" cy="16" r="12"/><path d="M16 8v8l5 3"/>
             </svg>
           </div>
           <h4>Same-Day Service</h4>
@@ -872,12 +959,11 @@
         <div class="why-feature reveal reveal-d1">
           <div class="why-feature-icon">
             <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 28V14l8-10 8 10v14"/>
-              <path d="M12 28v-8h8v8"/>
+              <path d="M8 28V14l8-10 8 10v14"/><path d="M12 28v-8h8v8"/>
             </svg>
           </div>
           <h4>Locally Owned</h4>
-          <p>A real local business with a real commitment to this community.</p>
+          <p>A real Hawaii business with a real commitment to this community.</p>
         </div>
       </div>
     </div>
@@ -924,12 +1010,12 @@
       <div class="cta-text reveal">
         <div class="section-label">Ready to Get Started?</div>
         <h2>Get Your Free Quote Today</h2>
-        <p>No commitment required. We'll give you a straight price and get the job scheduled fast. Same-day and next-day availability.</p>
+        <p>No commitment required. We'll give you a straight price and get the job scheduled fast. Same-day and next-day availability across Hawaii.</p>
       </div>
       <div class="cta-actions reveal reveal-d2">
-        <a href="tel:+1XXXXXXXXXX" class="phone-link">(XXX) XXX-XXXX</a>
+        <a href="tel:+18085366075" class="phone-link">808-536-6075</a>
         <div class="cta-note">Call or text anytime</div>
-        <a href="mailto:info@klsservices.com" class="btn-primary" style="margin-top:8px;">Email Us</a>
+        <a href="mailto:info@knowleapstrategies.com" class="btn-primary" style="margin-top:8px; text-align:center;">Email Us</a>
       </div>
     </div>
   </div>
@@ -958,33 +1044,22 @@
   const reveals = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        io.unobserve(e.target);
-      }
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach(el => io.observe(el));
 
-  // Trigger hero elements immediately
+  // Hero elements fire immediately
   document.querySelectorAll('#hero .reveal').forEach((el, i) => {
-    setTimeout(() => el.classList.add('visible'), 80 + i * 120);
+    setTimeout(() => el.classList.add('visible'), 80 + i * 130);
   });
 
   // Mobile nav
   const toggle = document.getElementById('mobileToggle');
   const mobileNav = document.getElementById('mobileNav');
-  toggle.addEventListener('click', () => {
-    mobileNav.classList.toggle('open');
-  });
-  function closeMobileNav() {
-    mobileNav.classList.remove('open');
-  }
-
-  // Smooth nav link close on scroll
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', () => closeMobileNav());
-  });
+  toggle.addEventListener('click', () => mobileNav.classList.toggle('open'));
+  function closeMobileNav() { mobileNav.classList.remove('open'); }
+  document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', closeMobileNav));
 </script>
 </body>
 </html>
