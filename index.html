@@ -3,27 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="KLS Services — Professional junk removal, hoarder cleanouts, rent ready showcasing, and pressure washing for residential and commercial properties in Hawaii.">
-  <title>KLS Services | Junk Removal, Cleanouts & Pressure Washing</title>
+  <title>KLS Services | Oahu Junk Removal &amp; Property Maintenance</title>
+  <meta name="description" content="KLS Services provides junk removal, property cleanouts, rent-ready preparation, pressure washing, landscaping, and commercial maintenance on Oahu, Hawaii. Request an estimate.">
+  <meta name="keywords" content="junk removal Oahu, property cleanout Hawaii, pressure washing Honolulu, landscaping Oahu, rent ready preparation, commercial maintenance Hawaii">
+  <link rel="canonical" href="https://hawaiikls.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="KLS Services | Oahu Property Cleanup &amp; Maintenance">
+  <meta property="og:description" content="Junk removal, property cleanouts, pressure washing, landscaping, and commercial maintenance on Oahu. One dependable team for residential and commercial property needs.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hawaiikls.com/">
+  <meta property="og:image" content="https://hawaiikls.com/images/hawaiikls-logo.jpg">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="KLS Services">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "KLS Services",
+    "description": "Property care and maintenance services on Oahu, Hawaii. Junk removal, property cleanouts, pressure washing, landscaping, and commercial maintenance.",
+    "url": "https://hawaiikls.com",
+    "telephone": "+1-808-536-6075",
+    "image": "https://hawaiikls.com/images/hawaiikls-logo.jpg",
+    "areaServed": {
+      "@type": "Place",
+      "name": "Oahu, Hawaii"
+    },
+    "serviceType": ["Junk Removal", "Property Cleanouts", "Pressure Washing", "Landscaping", "Commercial Maintenance", "Rental Turnover Preparation"],
+    "priceRange": "$$"
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <style>
+    /* ================================================================
+       KLS SERVICES — DESIGN SYSTEM
+       Property Care & Maintenance | Oahu, Hawaii
+       ================================================================ */
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:        #090909;
-      --surface:   #111111;
-      --surface2:  #181818;
-      --border:    #272727;
-      --silver:    #c8c8c8;
-      --silver-hi: #f0f0f0;
-      --silver-lo: #888888;
-      --orange:    #e07020;
-      --orange-hi: #f08030;
-      --text:      #e8e8e8;
-      --text-muted:#888888;
-      --radius:    6px;
+      --bg:         #080808;
+      --surface:    #101010;
+      --surface2:   #171717;
+      --surface3:   #1e1e1e;
+      --border:     #252525;
+      --border-hi:  #333333;
+      --silver:     #c0c0c0;
+      --silver-hi:  #eeeeee;
+      --silver-lo:  #808080;
+      --accent:     #0e8a9e;
+      --accent-hi:  #12a8bf;
+      --accent-lo:  #0a6e7e;
+      --accent-bg:  rgba(14, 138, 158, 0.08);
+      --text:       #e0e0e0;
+      --text-muted: #777777;
+      --white:      #ffffff;
+      --radius:     4px;
+      --radius-lg:  8px;
+      --transition: 0.25s ease;
+      --font-heading: 'Oswald', sans-serif;
+      --font-body:    'Inter', sans-serif;
     }
 
     html { scroll-behavior: smooth; }
@@ -31,93 +77,230 @@
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: 'Inter', sans-serif;
+      font-family: var(--font-body);
       font-size: 16px;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
     }
+
+    img { max-width: 100%; height: auto; }
+    a { color: inherit; }
 
     /* ── UTILITY ─────────────────────────────────────────── */
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
     .section-label {
-      font-family: 'Oswald', sans-serif;
-      font-size: 11px;
-      letter-spacing: 0.22em;
+      font-family: var(--font-heading);
+      font-size: 12px;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--orange);
-      margin-bottom: 14px;
+      color: var(--accent);
+      margin-bottom: 16px;
+      font-weight: 500;
     }
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.55s ease, transform 0.55s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
-    .reveal-d1 { transition-delay: 0.1s; }
-    .reveal-d2 { transition-delay: 0.2s; }
-    .reveal-d3 { transition-delay: 0.3s; }
-    .reveal-d4 { transition-delay: 0.4s; }
+    .section-header { margin-bottom: 56px; }
+    .section-header h2 { margin-bottom: 16px; }
+    .section-sub {
+      font-size: 16px;
+      color: var(--silver-lo);
+      max-width: 540px;
+      line-height: 1.75;
+    }
+    h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(30px, 4.5vw, 48px);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--silver-hi);
+      line-height: 1.1;
+      letter-spacing: 0.01em;
+    }
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--silver-hi);
+      margin-bottom: 10px;
+    }
 
-    /* ── NAV ─────────────────────────────────────────────── */
-    nav {
+    /* Buttons */
+    .btn-primary {
+      background: var(--accent);
+      color: var(--white);
+      text-decoration: none;
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      transition: background var(--transition), transform 0.15s ease;
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .btn-primary:hover { background: var(--accent-hi); transform: translateY(-1px); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--silver);
+      text-decoration: none;
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border-hi);
+      cursor: pointer;
+      transition: border-color var(--transition), color var(--transition);
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .btn-secondary:hover { border-color: var(--silver-lo); color: var(--silver-hi); }
+
+    /* ── NAVIGATION ──────────────────────────────────────── */
+    .site-nav {
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(9,9,9,0.94);
-      backdrop-filter: blur(12px);
+      background: rgba(8, 8, 8, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    .site-nav.scrolled {
+      background: rgba(8, 8, 8, 0.98);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.4);
     }
     .nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 66px;
+      height: 70px;
     }
     .nav-logo img {
-      height: 46px;
+      height: 48px;
       width: auto;
       display: block;
     }
     .nav-links {
       display: flex;
-      gap: 32px;
+      gap: 28px;
       list-style: none;
+      align-items: center;
     }
     .nav-links a {
       color: var(--silver-lo);
       text-decoration: none;
       font-size: 13px;
       font-weight: 500;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      transition: color 0.2s;
+      transition: color var(--transition);
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 1px;
+      background: var(--accent);
+      transition: width 0.3s ease;
     }
     .nav-links a:hover { color: var(--silver-hi); }
-    .btn-nav {
-      background: var(--orange);
-      color: #fff;
-      text-decoration: none;
-      font-family: 'Oswald', sans-serif;
-      font-size: 14px;
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta {
+      background: var(--accent);
+      color: var(--white) !important;
+      padding: 10px 20px;
+      border-radius: var(--radius);
+      font-family: var(--font-heading);
+      font-size: 13px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      padding: 10px 22px;
-      border-radius: var(--radius);
-      transition: background 0.2s;
+      text-decoration: none;
+      transition: background var(--transition);
       white-space: nowrap;
     }
-    .btn-nav:hover { background: var(--orange-hi); }
-    .nav-mobile-toggle {
+    .nav-cta::after { display: none; }
+    .nav-cta:hover { background: var(--accent-hi); color: var(--white) !important; }
+    .nav-phone {
+      color: var(--silver-hi) !important;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+    }
+    .nav-phone:hover { color: var(--accent) !important; }
+    .nav-phone::after { display: none; }
+
+    /* Mobile Toggle */
+    .nav-toggle {
       display: none;
       background: none;
       border: none;
       cursor: pointer;
-      padding: 6px;
+      padding: 8px;
       flex-direction: column;
       gap: 5px;
+      z-index: 110;
     }
-    .nav-mobile-toggle span {
+    .nav-toggle span {
       display: block;
-      width: 22px;
+      width: 24px;
       height: 2px;
       background: var(--silver);
-      transition: all 0.2s;
+      transition: all 0.3s;
+      transform-origin: center;
+    }
+    .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* Mobile Nav */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 70px; left: 0; right: 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px 24px;
+      flex-direction: column;
+      gap: 4px;
+      z-index: 99;
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      color: var(--silver-lo);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color var(--transition);
+    }
+    .mobile-nav a:hover { color: var(--silver-hi); }
+    .mobile-nav a:last-child { border-bottom: none; }
+    .mobile-nav .mobile-cta {
+      display: block;
+      background: var(--accent);
+      color: var(--white);
+      text-align: center;
+      padding: 14px;
+      border-radius: var(--radius);
+      margin-top: 8px;
+      font-family: var(--font-heading);
+      letter-spacing: 0.12em;
+      border-bottom: none;
     }
 
     /* ── HERO ────────────────────────────────────────────── */
@@ -126,140 +309,102 @@
       display: flex;
       align-items: center;
       position: relative;
-      padding-top: 66px;
+      padding-top: 70px;
       overflow: hidden;
     }
-    .hero-bg-photo {
+    .hero-bg {
       position: absolute;
       inset: 0;
       background-image: url('images/IMG_5826.JPG');
       background-size: cover;
       background-position: center 30%;
-      filter: brightness(0.22) saturate(0.4);
+      filter: brightness(0.18) saturate(0.3);
     }
-    .hero-bg-overlay {
+    .hero-overlay {
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(105deg, rgba(9,9,9,0.96) 0%, rgba(9,9,9,0.75) 55%, rgba(9,9,9,0.45) 100%),
-        radial-gradient(ellipse 50% 80% at 0% 50%, rgba(224,112,32,0.07) 0%, transparent 70%);
+        linear-gradient(105deg, rgba(8,8,8,0.97) 0%, rgba(8,8,8,0.80) 50%, rgba(8,8,8,0.50) 100%),
+        radial-gradient(ellipse 50% 80% at 0% 50%, rgba(14,138,158,0.06) 0%, transparent 70%);
     }
-    .hero-grid-lines {
+    .hero-grid {
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
-      background-size: 60px 60px;
+        linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px);
+      background-size: 64px 64px;
       pointer-events: none;
     }
     .hero-layout {
       position: relative;
       z-index: 2;
       display: grid;
-      grid-template-columns: 1fr 420px;
+      grid-template-columns: 1fr 380px;
       gap: 60px;
       align-items: center;
       width: 100%;
+      padding: 60px 0;
     }
-    .hero-content {}
     .hero-eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       font-size: 12px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--silver-lo);
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
     .hero-eyebrow::before {
       content: '';
       display: block;
-      width: 28px;
+      width: 32px;
       height: 1px;
-      background: var(--orange);
+      background: var(--accent);
     }
-    h1 {
-      font-family: 'Oswald', sans-serif;
-      font-size: clamp(44px, 6.5vw, 82px);
+    .hero-h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(36px, 5.5vw, 64px);
       font-weight: 700;
-      line-height: 1.0;
+      line-height: 1.05;
       letter-spacing: -0.01em;
       text-transform: uppercase;
-      color: var(--silver-hi);
+      color: var(--white);
       margin-bottom: 24px;
-    }
-    h1 em {
-      font-style: normal;
-      color: var(--orange);
     }
     .hero-sub {
       font-size: 17px;
       font-weight: 300;
       color: var(--silver-lo);
-      max-width: 500px;
-      margin-bottom: 40px;
-      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 36px;
+      line-height: 1.75;
     }
     .hero-actions {
       display: flex;
-      gap: 16px;
+      gap: 14px;
       flex-wrap: wrap;
-      margin-bottom: 48px;
+      margin-bottom: 44px;
     }
-    .btn-primary {
-      background: var(--orange);
-      color: #fff;
-      text-decoration: none;
-      font-family: 'Oswald', sans-serif;
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 16px 36px;
-      border-radius: var(--radius);
-      transition: background 0.2s, transform 0.15s;
-      display: inline-block;
-    }
-    .btn-primary:hover { background: var(--orange-hi); transform: translateY(-1px); }
-    .btn-secondary {
-      background: transparent;
-      color: var(--silver);
-      text-decoration: none;
-      font-family: 'Oswald', sans-serif;
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 16px 36px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      transition: border-color 0.2s, color 0.2s;
-      display: inline-block;
-    }
-    .btn-secondary:hover { border-color: var(--silver-lo); color: var(--silver-hi); }
     .hero-trust {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 20px;
       flex-wrap: wrap;
     }
-    .trust-badge {
-      display: flex;
-      align-items: center;
-      gap: 8px;
+    .hero-trust span {
       font-size: 13px;
       color: var(--silver-lo);
+      letter-spacing: 0.04em;
     }
-    .trust-badge .dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--orange);
-      flex-shrink: 0;
+    .hero-trust-divider {
+      width: 1px;
+      height: 14px;
+      background: var(--border-hi);
     }
 
-    /* ── HERO LOGO DISPLAY ───────────────────────────────── */
+    /* Hero Logo */
     .hero-logo-panel {
       display: flex;
       align-items: center;
@@ -268,76 +413,70 @@
     }
     .hero-logo-glow {
       position: absolute;
-      inset: -30px;
+      inset: -40px;
       border-radius: 50%;
-      background: radial-gradient(ellipse at center, rgba(200,200,200,0.08) 0%, transparent 70%);
+      background: radial-gradient(ellipse at center, rgba(14,138,158,0.06) 0%, transparent 70%);
       pointer-events: none;
     }
     .hero-logo-main {
       width: 100%;
-      max-width: 420px;
-      border-radius: 12px;
+      max-width: 380px;
+      border-radius: var(--radius-lg);
       display: block;
       position: relative;
       z-index: 1;
-      filter: drop-shadow(0 0 40px rgba(180,180,180,0.12)) drop-shadow(0 0 80px rgba(180,180,180,0.06));
-      border: 1px solid rgba(255,255,255,0.06);
+      filter: drop-shadow(0 0 50px rgba(14,138,158,0.08));
+      border: 1px solid rgba(255,255,255,0.05);
     }
 
-    /* ── STATS BAR ───────────────────────────────────────── */
-    #stats {
+    /* ── CREDIBILITY BAR ─────────────────────────────────── */
+    #credibility {
       background: var(--surface);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
+      padding: 28px 0;
     }
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+    .cred-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
     }
-    .stat-item {
-      padding: 36px 24px;
-      text-align: center;
-      border-right: 1px solid var(--border);
-    }
-    .stat-item:last-child { border-right: none; }
-    .stat-value {
-      font-family: 'Oswald', sans-serif;
-      font-size: 42px;
-      font-weight: 700;
-      color: var(--silver-hi);
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-    .stat-value span { color: var(--orange); }
-    .stat-label {
-      font-size: 12px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+    .cred-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
       color: var(--silver-lo);
+      letter-spacing: 0.04em;
+    }
+    .cred-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--accent-bg);
+      border: 1px solid rgba(14,138,158,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .cred-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     /* ── SERVICES ────────────────────────────────────────── */
     #services { padding: 100px 0; }
-    .section-header { margin-bottom: 60px; }
-    h2 {
-      font-family: 'Oswald', sans-serif;
-      font-size: clamp(32px, 5vw, 52px);
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--silver-hi);
-      line-height: 1.1;
-      letter-spacing: 0.01em;
-    }
-    .section-sub {
-      margin-top: 14px;
-      font-size: 16px;
-      color: var(--silver-lo);
-      max-width: 520px;
-      line-height: 1.7;
-    }
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 2px;
     }
     .service-card {
@@ -345,7 +484,9 @@
       border: 1px solid var(--border);
       position: relative;
       overflow: hidden;
-      transition: border-color 0.25s, background 0.25s;
+      transition: border-color var(--transition), background var(--transition);
+      text-decoration: none;
+      display: block;
     }
     .service-card::before {
       content: '';
@@ -353,198 +494,246 @@
       top: 0; left: 0;
       width: 3px;
       height: 0;
-      background: var(--orange);
-      transition: height 0.3s ease;
+      background: var(--accent);
+      transition: height 0.35s ease;
       z-index: 2;
     }
-    .service-card:hover { border-color: #333; background: var(--surface2); }
+    .service-card:hover { border-color: var(--border-hi); background: var(--surface2); }
     .service-card:hover::before { height: 100%; }
-
-    /* service photo header */
     .service-photo {
       width: 100%;
       height: 200px;
       object-fit: cover;
       display: block;
-      filter: brightness(0.55) saturate(0.6);
-      transition: filter 0.3s;
+      filter: brightness(0.5) saturate(0.5);
+      transition: filter 0.4s ease;
     }
     .service-card:hover .service-photo { filter: brightness(0.65) saturate(0.7); }
-    .service-photo-placeholder {
+    .service-placeholder {
       width: 100%;
       height: 200px;
-      background: var(--surface2);
+      background: linear-gradient(135deg, var(--surface2) 0%, var(--surface3) 100%);
       display: flex;
       align-items: center;
       justify-content: center;
     }
-
-    .service-body { padding: 32px 36px 36px; }
-    .service-icon {
+    .service-placeholder svg {
       width: 48px;
       height: 48px;
-      margin-bottom: 18px;
+      stroke: var(--border-hi);
+      fill: none;
+      stroke-width: 1.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: 0.5;
+    }
+    .service-body { padding: 28px 30px 32px; }
+    .service-icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
     .service-icon svg {
-      width: 38px;
-      height: 38px;
+      width: 32px;
+      height: 32px;
       stroke: var(--silver-lo);
       fill: none;
       stroke-width: 1.4;
       stroke-linecap: round;
       stroke-linejoin: round;
-      transition: stroke 0.25s;
+      transition: stroke var(--transition);
     }
-    .service-card:hover .service-icon svg { stroke: var(--orange); }
-    .service-number {
-      position: absolute;
-      top: 16px; right: 20px;
-      font-family: 'Oswald', sans-serif;
-      font-size: 52px;
-      font-weight: 700;
-      color: rgba(255,255,255,0.06);
-      line-height: 1;
-      pointer-events: none;
-      z-index: 1;
-    }
-    h3 {
-      font-family: 'Oswald', sans-serif;
-      font-size: 22px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--silver-hi);
-      margin-bottom: 10px;
-    }
+    .service-card:hover .service-icon svg { stroke: var(--accent); }
     .service-desc {
-      font-size: 15px;
+      font-size: 14px;
       color: var(--silver-lo);
-      line-height: 1.65;
+      line-height: 1.7;
+      margin-bottom: 16px;
     }
-    .service-tag {
-      display: inline-block;
-      margin-top: 18px;
-      font-size: 11px;
+    .service-link {
+      font-family: var(--font-heading);
+      font-size: 12px;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--orange);
-      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color var(--transition);
     }
-    .service-card.full-width { grid-column: span 2; }
-    .landscaping-photos {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 3px;
-      height: 240px;
+    .service-link:hover { color: var(--accent-hi); }
+    .service-link svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
-    .landscaping-photos img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      filter: brightness(0.55) saturate(0.7);
-      transition: filter 0.3s;
-    }
-    .service-card:hover .landscaping-photos img { filter: brightness(0.68) saturate(0.85); }
-    @media (max-width: 560px) { .service-card.full-width { grid-column: span 1; } .landscaping-photos { grid-template-columns: 1fr; height: auto; } .landscaping-photos img { height: 160px; } }
 
-    /* ── PHOTO GALLERY ───────────────────────────────────── */
-    #gallery {
+    /* ── OUR WORK / GALLERY ──────────────────────────────── */
+    #work {
       padding: 100px 0;
       background: var(--surface);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
-    .gallery-header {
-      margin-bottom: 48px;
+    .gallery-filters {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
     }
-    .photo-grid {
+    .filter-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--silver-lo);
+      font-family: var(--font-heading);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .filter-btn:hover { border-color: var(--border-hi); color: var(--silver-hi); }
+    .filter-btn.active { background: var(--accent); border-color: var(--accent); color: var(--white); }
+    .gallery-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto auto;
       gap: 4px;
     }
-    .photo-grid-item {
+    .gallery-item {
       overflow: hidden;
       position: relative;
+      cursor: pointer;
+      aspect-ratio: 4/3;
     }
-    .photo-grid-item.wide {
-      grid-column: span 2;
-    }
-    .photo-grid-item img {
+    .gallery-item img {
       width: 100%;
-      height: 280px;
+      height: 100%;
       object-fit: cover;
       display: block;
-      filter: brightness(0.7) saturate(0.7);
-      transition: filter 0.4s ease, transform 0.4s ease;
+      filter: brightness(0.65) saturate(0.6);
+      transition: filter 0.4s ease, transform 0.5s ease;
     }
-    .photo-grid-item.wide img { height: 280px; }
-    .photo-grid-item:hover img {
-      filter: brightness(0.9) saturate(0.85);
-      transform: scale(1.03);
+    .gallery-item:hover img {
+      filter: brightness(0.85) saturate(0.8);
+      transform: scale(1.04);
     }
-    .photo-caption {
+    .gallery-caption {
       position: absolute;
       bottom: 0; left: 0; right: 0;
-      padding: 20px 16px 14px;
-      background: linear-gradient(transparent, rgba(0,0,0,0.7));
+      padding: 24px 16px 14px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.75));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .gallery-caption span {
       font-size: 11px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--silver-lo);
-      opacity: 0;
-      transition: opacity 0.3s;
     }
-    .photo-grid-item:hover .photo-caption { opacity: 1; }
+    .gallery-item:hover .gallery-caption { opacity: 1; }
+    .gallery-item[data-hidden="true"] { display: none; }
 
-    /* ── WHY KLS ─────────────────────────────────────────── */
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(0,0,0,0.92);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: var(--radius);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 24px; right: 24px;
+      width: 40px; height: 40px;
+      background: rgba(255,255,255,0.1);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox-close svg {
+      width: 20px; height: 20px;
+      stroke: var(--white);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
+
+    /* ── WHY CHOOSE KLS ──────────────────────────────────── */
     #why { padding: 100px 0; }
     .why-layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 72px;
-      align-items: center;
+      align-items: start;
     }
     .why-text h2 { margin-bottom: 20px; }
     .why-text p {
       font-size: 16px;
       color: var(--silver-lo);
-      line-height: 1.75;
+      line-height: 1.8;
       margin-bottom: 16px;
     }
     .why-features {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap: 14px;
     }
     .why-feature {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 20px;
-      transition: border-color 0.2s;
+      transition: border-color var(--transition);
     }
-    .why-feature:hover { border-color: var(--orange); }
-    .why-feature-icon { width: 32px; height: 32px; margin-bottom: 10px; }
+    .why-feature:hover { border-color: var(--accent-lo); }
+    .why-feature-icon {
+      width: 32px; height: 32px;
+      margin-bottom: 10px;
+    }
     .why-feature-icon svg {
-      width: 28px; height: 28px;
-      stroke: var(--orange); fill: none;
+      width: 26px; height: 26px;
+      stroke: var(--accent); fill: none;
       stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
     }
     .why-feature h4 {
-      font-family: 'Oswald', sans-serif;
+      font-family: var(--font-heading);
       font-size: 14px; font-weight: 600;
-      text-transform: uppercase; letter-spacing: 0.08em;
+      text-transform: uppercase; letter-spacing: 0.06em;
       color: var(--silver-hi); margin-bottom: 4px;
     }
-    .why-feature p { font-size: 13px; color: var(--silver-lo); line-height: 1.5; }
+    .why-feature p { font-size: 13px; color: var(--silver-lo); line-height: 1.55; margin-bottom: 0; }
 
-    /* ── PROCESS ─────────────────────────────────────────── */
-    #process { padding: 100px 0; background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    /* ── HOW IT WORKS ────────────────────────────────────── */
+    #process {
+      padding: 100px 0;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
     .process-steps {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -552,38 +741,315 @@
       margin-top: 56px;
       position: relative;
     }
-    .process-steps::after {
-      content: '';
+    .process-line {
       position: absolute;
-      top: 28px; left: calc(12.5%); right: calc(12.5%);
+      top: 28px;
+      left: calc(12.5%);
+      right: calc(12.5%);
       height: 1px;
       background: var(--border);
       z-index: 0;
     }
-    .process-step { padding: 0 24px; text-align: center; position: relative; z-index: 1; }
-    .step-num {
-      width: 56px; height: 56px; border-radius: 50%;
-      background: var(--bg); border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 20px;
-      font-family: 'Oswald', sans-serif; font-size: 18px; font-weight: 700; color: var(--orange);
+    .process-line-fill {
+      height: 100%;
+      width: 0;
+      background: var(--accent);
+      transition: width 1s ease;
+    }
+    .process-step {
+      padding: 0 20px;
+      text-align: center;
       position: relative;
+      z-index: 1;
+    }
+    .step-num {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--accent);
+      position: relative;
+      transition: border-color 0.4s;
     }
     .step-num::before {
-      content: ''; position: absolute; inset: -4px;
-      border-radius: 50%; border: 1px solid var(--border);
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
     }
+    .step-num.lit { border-color: var(--accent); }
+    .step-num.lit::before { border-color: rgba(14,138,158,0.3); }
     .process-step h4 {
-      font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 600;
+      font-family: var(--font-heading);
+      font-size: 15px; font-weight: 600;
       text-transform: uppercase; letter-spacing: 0.08em;
       color: var(--silver-hi); margin-bottom: 8px;
     }
-    .process-step p { font-size: 13px; color: var(--silver-lo); line-height: 1.55; }
+    .process-step p { font-size: 13px; color: var(--silver-lo); line-height: 1.6; }
+
+    /* ── SERVICE AREAS ───────────────────────────────────── */
+    #areas { padding: 100px 0; }
+    .areas-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .areas-text h2 { margin-bottom: 16px; }
+    .areas-text p {
+      font-size: 16px;
+      color: var(--silver-lo);
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+    .areas-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 24px;
+      list-style: none;
+    }
+    .areas-list li {
+      font-size: 15px;
+      color: var(--silver);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .areas-list li::before {
+      content: '';
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+    .areas-highlight {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+    }
+    .areas-highlight h3 {
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+    .areas-highlight p {
+      font-size: 15px;
+      color: var(--silver-lo);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    /* ── PROPERTY MANAGERS ────────────────────────────────── */
+    #managers {
+      padding: 80px 0;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .managers-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .managers-text h2 { margin-bottom: 16px; }
+    .managers-text p {
+      font-size: 16px;
+      color: var(--silver-lo);
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    .managers-features {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .mgr-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+    .mgr-feature-icon {
+      width: 32px; height: 32px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .mgr-feature-icon svg {
+      width: 22px; height: 22px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .mgr-feature h4 {
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--silver-hi);
+      margin-bottom: 2px;
+    }
+    .mgr-feature p { font-size: 13px; color: var(--silver-lo); line-height: 1.5; margin-bottom: 0; }
+
+    /* ── QUOTE FORM ──────────────────────────────────────── */
+    #quote {
+      padding: 100px 0;
+    }
+    .quote-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .quote-text h2 { margin-bottom: 16px; }
+    .quote-text p {
+      font-size: 16px;
+      color: var(--silver-lo);
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+    .quote-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .quote-contact-icon {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--accent-bg);
+      border: 1px solid rgba(14,138,158,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .quote-contact-icon svg {
+      width: 18px; height: 18px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .quote-contact-item a {
+      font-size: 16px;
+      color: var(--silver-hi);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color var(--transition);
+    }
+    .quote-contact-item a:hover { color: var(--accent); }
+    .quote-contact-item span {
+      font-size: 12px;
+      color: var(--silver-lo);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: block;
+    }
+
+    .quote-form {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+    }
+    .quote-form h3 {
+      font-size: 18px;
+      margin-bottom: 24px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+    .form-group.full { grid-column: span 2; }
+    .form-group label {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--silver-lo);
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+    .form-group label .req { color: var(--accent); }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 14px;
+      color: var(--silver-hi);
+      font-family: var(--font-body);
+      font-size: 14px;
+      transition: border-color var(--transition);
+      outline: none;
+      width: 100%;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+    }
+    .form-group select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%23808080' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-submit {
+      margin-top: 8px;
+    }
+    .form-submit .btn-primary {
+      width: 100%;
+      padding: 16px;
+      font-size: 15px;
+      text-align: center;
+    }
+    .form-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 12px;
+      line-height: 1.5;
+    }
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .form-success h3 { color: var(--accent); margin-bottom: 12px; }
+    .form-success p { color: var(--silver-lo); }
 
     /* ── CTA ─────────────────────────────────────────────── */
     #cta {
       padding: 0;
-      background: linear-gradient(135deg, #0f0f0f 0%, #151515 50%, #0a0a0a 100%);
+      background: linear-gradient(135deg, var(--surface) 0%, #0c0c0c 50%, var(--bg) 100%);
       border-top: 1px solid var(--border);
     }
     .cta-inner {
@@ -591,517 +1057,1109 @@
       grid-template-columns: 1fr auto;
       gap: 40px;
       align-items: center;
-      padding: 72px 0;
+      padding: 80px 0;
     }
-    .cta-text h2 { margin-bottom: 12px; }
-    .cta-text p { font-size: 16px; color: var(--silver-lo); max-width: 480px; }
+    .cta-text h2 { margin-bottom: 14px; }
+    .cta-text p { font-size: 16px; color: var(--silver-lo); max-width: 500px; line-height: 1.75; }
     .cta-actions {
-      display: flex; flex-direction: column; gap: 12px;
-      align-items: flex-end; flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-end;
+      flex-shrink: 0;
     }
     .phone-link {
-      font-family: 'Oswald', sans-serif;
-      font-size: 30px; font-weight: 700;
+      font-family: var(--font-heading);
+      font-size: 28px; font-weight: 700;
       color: var(--silver-hi);
-      text-decoration: none; letter-spacing: 0.04em;
-      transition: color 0.2s; white-space: nowrap;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: color var(--transition);
+      white-space: nowrap;
     }
-    .phone-link:hover { color: var(--orange); }
-    .cta-note { font-size: 12px; color: var(--silver-lo); letter-spacing: 0.1em; text-transform: uppercase; }
+    .phone-link:hover { color: var(--accent); }
+    .cta-note {
+      font-size: 12px;
+      color: var(--silver-lo);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
 
     /* ── FOOTER ──────────────────────────────────────────── */
     footer {
-      background: #060606;
+      background: #050505;
       border-top: 1px solid var(--border);
-      padding: 40px 0;
     }
-    .footer-inner {
-      display: flex; align-items: center;
-      justify-content: space-between; gap: 24px; flex-wrap: wrap;
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding: 64px 0 48px;
     }
-    .footer-logo img { height: 38px; width: auto; opacity: 0.7; }
-    .footer-services { display: flex; gap: 20px; flex-wrap: wrap; }
-    .footer-services span {
-      font-size: 12px; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--silver-lo);
+    .footer-brand img {
+      height: 52px;
+      width: auto;
+      opacity: 0.85;
+      margin-bottom: 16px;
+      display: block;
     }
-    .footer-copy { font-size: 12px; color: #444; }
+    .footer-tagline {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--silver-lo);
+      margin-bottom: 8px;
+    }
+    .footer-domain {
+      font-size: 14px;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .footer-serving {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .footer-col h4 {
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--silver-hi);
+      margin-bottom: 18px;
+    }
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a {
+      font-size: 14px;
+      color: var(--silver-lo);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    .footer-col a:hover { color: var(--silver-hi); }
+    .footer-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .footer-contact-item svg {
+      width: 16px; height: 16px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+    .footer-contact-item a, .footer-contact-item span {
+      font-size: 14px;
+      color: var(--silver-lo);
+      text-decoration: none;
+    }
+    .footer-contact-item a:hover { color: var(--silver-hi); }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-copy {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .footer-bottom-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-bottom-links a {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    .footer-bottom-links a:hover { color: var(--silver-lo); }
+
+    /* ── MOBILE STICKY CTA ───────────────────────────────── */
+    .mobile-sticky-cta {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 90;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 10px 16px;
+      gap: 10px;
+    }
+    .mobile-sticky-cta a {
+      flex: 1;
+      text-align: center;
+      padding: 12px 16px;
+      border-radius: var(--radius);
+      font-family: var(--font-heading);
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .mobile-sticky-cta .mobile-call {
+      background: var(--accent);
+      color: var(--white);
+    }
+    .mobile-sticky-cta .mobile-quote {
+      background: transparent;
+      border: 1px solid var(--border-hi);
+      color: var(--silver);
+    }
 
     /* ── RESPONSIVE ──────────────────────────────────────── */
-    @media (max-width: 960px) {
-      .hero-layout { grid-template-columns: 1fr; gap: 48px; }
+    @media (max-width: 1024px) {
+      .hero-layout { grid-template-columns: 1fr; gap: 40px; }
       .hero-logo-panel { order: -1; }
-      .hero-logo-main { max-width: 300px; margin: 0 auto; }
-      .nav-links, .btn-nav { display: none; }
-      .nav-mobile-toggle { display: flex; }
-    }
-    @media (max-width: 900px) {
-      .stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .stat-item:nth-child(2) { border-right: none; }
-      .stat-item:nth-child(3) { border-right: 1px solid var(--border); }
-      .services-grid { grid-template-columns: 1fr; }
-      .why-layout { grid-template-columns: 1fr; gap: 40px; }
-      .process-steps { grid-template-columns: 1fr 1fr; gap: 32px; }
-      .process-steps::after { display: none; }
-      .cta-inner { grid-template-columns: 1fr; gap: 32px; }
-      .cta-actions { align-items: flex-start; }
-      .photo-grid { grid-template-columns: 1fr 1fr; }
-      .photo-grid-item.wide { grid-column: span 2; }
-    }
-    @media (max-width: 560px) {
-      .stats-grid { grid-template-columns: 1fr 1fr; }
-      .why-features { grid-template-columns: 1fr; }
-      .process-steps { grid-template-columns: 1fr; }
-      .hero-actions { flex-direction: column; }
-      .btn-primary, .btn-secondary { text-align: center; }
-      .photo-grid { grid-template-columns: 1fr; }
-      .photo-grid-item.wide { grid-column: span 1; }
+      .hero-logo-main { max-width: 280px; margin: 0 auto; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .nav-toggle { display: flex; }
+      .mobile-sticky-cta { display: flex; }
+      footer { padding-bottom: 60px; }
     }
 
-    /* ── MOBILE NAV ──────────────────────────────────────── */
-    .mobile-nav {
-      display: none; flex-direction: column;
-      background: var(--surface); border-top: 1px solid var(--border);
-      padding: 16px 24px; gap: 4px;
+    @media (max-width: 900px) {
+      .why-layout { grid-template-columns: 1fr; gap: 40px; }
+      .managers-inner { grid-template-columns: 1fr; gap: 40px; }
+      .areas-layout { grid-template-columns: 1fr; gap: 40px; }
+      .quote-layout { grid-template-columns: 1fr; gap: 40px; }
+      .cta-inner { grid-template-columns: 1fr; gap: 28px; }
+      .cta-actions { align-items: flex-start; }
+      .footer-main { grid-template-columns: 1fr 1fr; gap: 36px; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-steps { grid-template-columns: 1fr 1fr; gap: 28px; }
+      .process-line { display: none; }
     }
-    .mobile-nav.open { display: flex; }
-    .mobile-nav a {
-      color: var(--silver-lo); text-decoration: none;
-      font-size: 14px; font-weight: 500; letter-spacing: 0.08em;
-      text-transform: uppercase; padding: 10px 0;
-      border-bottom: 1px solid var(--border);
+
+    @media (max-width: 640px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; }
+      .why-features { grid-template-columns: 1fr; }
+      .areas-list { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; }
+      .btn-primary, .btn-secondary { text-align: center; }
+      .cred-inner { flex-direction: column; gap: 16px; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-group.full { grid-column: span 1; }
+      .footer-main { grid-template-columns: 1fr; gap: 32px; }
+      .hero-trust { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .hero-trust-divider { display: none; }
     }
-    .mobile-nav a:last-child { border-bottom: none; color: var(--orange); }
+
+    /* ── REDUCED MOTION ──────────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto; }
+    }
+
+    /* ── GSAP INITIAL STATES ─────────────────────────────── */
+    .gs-hidden {
+      opacity: 0;
+      transform: translateY(24px);
+    }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<nav class="site-nav" id="siteNav">
   <div class="container nav-inner">
-    <a href="#" class="nav-logo">
-      <img src="images/kls-services-logo.jpg" alt="KLS Services">
+    <a href="#" class="nav-logo" aria-label="KLS Services Home">
+      <img src="images/hawaiikls-logo.jpg" alt="KLS Services - Property Care and Maintenance" width="200" height="200">
     </a>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
-      <li><a href="#gallery">Our Work</a></li>
-      <li><a href="#why">Why KLS</a></li>
-      <li><a href="#process">How It Works</a></li>
+      <li><a href="#work">Our Work</a></li>
+      <li><a href="#why">About KLS</a></li>
+      <li><a href="#areas">Service Areas</a></li>
+      <li><a href="#quote">Contact</a></li>
+      <li><a href="tel:+18085366075" class="nav-phone">808-536-6075</a></li>
+      <li><a href="#quote" class="nav-cta">Get a Free Quote</a></li>
     </ul>
-    <a href="tel:+18085366075" class="btn-nav">808-536-6075</a>
-    <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Open menu">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
-  <div class="mobile-nav" id="mobileNav">
-    <a href="#services" onclick="closeMobileNav()">Services</a>
-    <a href="#gallery" onclick="closeMobileNav()">Our Work</a>
-    <a href="#why" onclick="closeMobileNav()">Why KLS</a>
-    <a href="#process" onclick="closeMobileNav()">How It Works</a>
-    <a href="tel:+18085366075" onclick="closeMobileNav()">808-536-6075</a>
+  <div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+    <a href="#services" class="mobile-link">Services</a>
+    <a href="#work" class="mobile-link">Our Work</a>
+    <a href="#why" class="mobile-link">About KLS</a>
+    <a href="#areas" class="mobile-link">Service Areas</a>
+    <a href="#quote" class="mobile-link">Contact</a>
+    <a href="tel:+18085366075" class="mobile-link">Call 808-536-6075</a>
+    <a href="#quote" class="mobile-cta mobile-link">Get a Free Quote</a>
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- ============================================================
+     HERO
+     ============================================================ -->
 <section id="hero">
-  <div class="hero-bg-photo"></div>
-  <div class="hero-bg-overlay"></div>
-  <div class="hero-grid-lines"></div>
+  <div class="hero-bg" role="presentation"></div>
+  <div class="hero-overlay" role="presentation"></div>
+  <div class="hero-grid" role="presentation"></div>
   <div class="container">
     <div class="hero-layout">
-
-      <!-- Text -->
       <div class="hero-content">
-        <div class="hero-eyebrow reveal">Residential &amp; Commercial — Hawaii</div>
-        <h1 class="reveal reveal-d1">We Haul It.<br><em>Clean It.</em><br>Restore It.</h1>
-        <p class="hero-sub reveal reveal-d2">KLS Services delivers fast, professional junk removal, hoarder cleanouts, rent-ready prep, and pressure washing. One call handles it all.</p>
-        <div class="hero-actions reveal reveal-d3">
-          <a href="tel:+18085366075" class="btn-primary">Call 808-536-6075</a>
-          <a href="#services" class="btn-secondary">View Services</a>
+        <div class="hero-eyebrow gs-hidden">Locally Owned &bull; Serving Oahu, Hawaii</div>
+        <h1 class="hero-h1 gs-hidden">Oahu Property Cleanup &amp; Maintenance Services</h1>
+        <p class="hero-sub gs-hidden">KLS Services provides junk removal, property cleanouts, rental turnover preparation, pressure washing, landscaping, and commercial maintenance throughout Oahu. One dependable team for residential and commercial property needs.</p>
+        <div class="hero-actions gs-hidden">
+          <a href="#quote" class="btn-primary">Get a Free Estimate</a>
+          <a href="tel:+18085366075" class="btn-secondary">Call 808-536-6075</a>
         </div>
-        <div class="hero-trust reveal reveal-d4">
-          <div class="trust-badge"><span class="dot"></span>Licensed &amp; Insured</div>
-          <div class="trust-badge"><span class="dot"></span>Same-Day Available</div>
-          <div class="trust-badge"><span class="dot"></span>Free Estimates</div>
+        <div class="hero-trust gs-hidden">
+          <span>Residential</span>
+          <span class="hero-trust-divider"></span>
+          <span>Commercial</span>
+          <span class="hero-trust-divider"></span>
+          <span>Property Management</span>
         </div>
       </div>
-
-      <!-- Prominent Logo -->
-      <div class="hero-logo-panel reveal reveal-d2">
+      <div class="hero-logo-panel gs-hidden">
         <div class="hero-logo-glow"></div>
-        <img src="images/kls-services-logo.jpg" alt="KLS Services" class="hero-logo-main">
+        <img src="images/hawaiikls-logo.jpg" alt="KLS Services" class="hero-logo-main" width="380" height="380" loading="eager">
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- STATS -->
-<section id="stats">
+<!-- ============================================================
+     CREDIBILITY BAR
+     ============================================================ -->
+<section id="credibility">
   <div class="container">
-    <div class="stats-grid">
-      <div class="stat-item reveal">
-        <div class="stat-value">500<span>+</span></div>
-        <div class="stat-label">Jobs Completed</div>
+    <div class="cred-inner">
+      <div class="cred-item gs-hidden">
+        <div class="cred-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <span>Full-Service Property Care</span>
       </div>
-      <div class="stat-item reveal reveal-d1">
-        <div class="stat-value"><span>24</span>hr</div>
-        <div class="stat-label">Rapid Response</div>
+      <div class="cred-item gs-hidden">
+        <div class="cred-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <span>Locally Owned &amp; Insured</span>
       </div>
-      <div class="stat-item reveal reveal-d2">
-        <div class="stat-value">100<span>%</span></div>
-        <div class="stat-label">Satisfaction Rate</div>
+      <div class="cred-item gs-hidden">
+        <div class="cred-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+        </div>
+        <span>Free Estimates</span>
       </div>
-      <div class="stat-item reveal reveal-d3">
-        <div class="stat-value"><span>$</span>0</div>
-        <div class="stat-label">Hidden Fees</div>
+      <div class="cred-item gs-hidden">
+        <div class="cred-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <span>Serving All of Oahu</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- ============================================================
+     SERVICES
+     ============================================================ -->
 <section id="services">
   <div class="container">
-    <div class="section-header reveal">
+    <div class="section-header gs-hidden">
       <div class="section-label">What We Do</div>
-      <h2>Services That Get<br>The Job Done Right</h2>
-      <p class="section-sub">From a single bulky item to a full property cleanout, KLS Services has the crew, equipment, and experience to handle any scale of work.</p>
+      <h2>Comprehensive Property<br>Services for Oahu</h2>
+      <p class="section-sub">From a single bulky item to a full commercial property maintenance program, KLS Services has the crew and equipment to handle any scale of work.</p>
     </div>
     <div class="services-grid">
 
-      <!-- Junk Removal -->
-      <div class="service-card reveal">
-        <div class="service-photo-placeholder">
-          <div class="service-icon" style="transform:scale(2); opacity:0.2;">
-            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-              <rect x="6" y="20" width="36" height="22" rx="2"/>
-              <path d="M4 20h40"/><path d="M16 20V14a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6"/>
-              <circle cx="14" cy="40" r="3"/><circle cx="34" cy="40" r="3"/>
-              <path d="M6 28h36"/>
-            </svg>
-          </div>
+      <!-- 1. Junk Removal -->
+      <a href="services/junk-removal.html" class="service-card gs-hidden">
+        <div class="service-placeholder">
+          <svg viewBox="0 0 48 48"><rect x="6" y="20" width="36" height="22" rx="2"/><path d="M4 20h40"/><path d="M16 20V14a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6"/><circle cx="14" cy="40" r="3"/><circle cx="34" cy="40" r="3"/></svg>
         </div>
-        <span class="service-number">01</span>
         <div class="service-body">
           <div class="service-icon">
-            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-              <rect x="6" y="20" width="36" height="22" rx="2"/>
-              <path d="M4 20h40"/><path d="M16 20V14a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6"/>
-              <circle cx="14" cy="40" r="3"/><circle cx="34" cy="40" r="3"/>
-              <path d="M6 28h36"/>
-            </svg>
+            <svg viewBox="0 0 48 48"><rect x="6" y="20" width="36" height="22" rx="2"/><path d="M4 20h40"/><path d="M16 20V14a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6"/><circle cx="14" cy="40" r="3"/><circle cx="34" cy="40" r="3"/></svg>
           </div>
           <h3>Junk Removal</h3>
-          <p class="service-desc">Residential and commercial haul-away for garages, attics, offices, warehouses, and construction sites. Single items to full truckloads — we clear it all fast and responsibly.</p>
-          <span class="service-tag">Residential &amp; Commercial</span>
+          <p class="service-desc">Residential and commercial junk removal, unwanted furniture, appliances, debris, garage cleanouts, and general haul-away services. Single items to full truckloads.</p>
+          <span class="service-link">Learn More <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </div>
-      </div>
+      </a>
 
-      <!-- Hoarder Cleanouts -->
-      <div class="service-card reveal reveal-d1">
-        <div class="service-photo-placeholder">
-          <div class="service-icon" style="transform:scale(2); opacity:0.2;">
-            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 38V18L24 8l16 10v20H8z"/>
-              <rect x="18" y="28" width="12" height="10" rx="1"/>
-              <path d="M14 22h4M30 22h4"/>
-            </svg>
-          </div>
+      <!-- 2. Hoarder & Property Cleanouts -->
+      <a href="services/hoarder-cleanouts.html" class="service-card gs-hidden">
+        <div class="service-placeholder">
+          <svg viewBox="0 0 48 48"><path d="M8 38V18L24 8l16 10v20H8z"/><rect x="18" y="28" width="12" height="10" rx="1"/><path d="M14 22h4M30 22h4"/></svg>
         </div>
-        <span class="service-number">02</span>
         <div class="service-body">
           <div class="service-icon">
-            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 38V18L24 8l16 10v20H8z"/>
-              <rect x="18" y="28" width="12" height="10" rx="1"/>
-              <path d="M14 22h4M30 22h4M14 28h4M30 28h4"/>
-              <path d="M20 18h8"/>
-            </svg>
+            <svg viewBox="0 0 48 48"><path d="M8 38V18L24 8l16 10v20H8z"/><rect x="18" y="28" width="12" height="10" rx="1"/><path d="M14 22h4M30 22h4"/></svg>
           </div>
-          <h3>Hoarder Cleanouts</h3>
-          <p class="service-desc">Severely cluttered homes require a careful hand. We approach every cleanout with professionalism and respect, removing debris and restoring the space — no matter the condition.</p>
-          <span class="service-tag">Compassionate &amp; Discreet</span>
+          <h3>Hoarder &amp; Property Cleanouts</h3>
+          <p class="service-desc">Respectful and discreet assistance with heavily cluttered homes, estate cleanouts, abandoned property cleanouts, and other challenging cleanup projects.</p>
+          <span class="service-link">Learn More <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </div>
-      </div>
+      </a>
 
-      <!-- Rent Ready -->
-      <div class="service-card reveal reveal-d2">
-        <div class="service-photo-placeholder">
-          <div class="service-icon" style="transform:scale(2); opacity:0.2;">
-            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 38V20L24 8l18 12v18H6z"/>
-              <path d="M18 38V28h12v10"/>
-              <path d="M34 22l4-4M34 18l2 2-6 6-2-2z"/>
-            </svg>
-          </div>
+      <!-- 3. Rental Turnover -->
+      <a href="services/rental-turnover.html" class="service-card gs-hidden">
+        <div class="service-placeholder">
+          <svg viewBox="0 0 48 48"><path d="M6 38V20L24 8l18 12v18H6z"/><path d="M18 38V28h12v10"/><path d="M24 14v4"/><circle cx="30" cy="18" r="2"/></svg>
         </div>
-        <span class="service-number">03</span>
         <div class="service-body">
           <div class="service-icon">
-            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 38V20L24 8l18 12v18H6z"/>
-              <path d="M18 38V28h12v10"/>
-              <path d="M24 14v4"/>
-              <circle cx="30" cy="18" r="2"/>
-              <path d="M34 26l4-4M34 22l2 2-6 6-2-2z"/>
-            </svg>
+            <svg viewBox="0 0 48 48"><path d="M6 38V20L24 8l18 12v18H6z"/><path d="M18 38V28h12v10"/><path d="M24 14v4"/><circle cx="30" cy="18" r="2"/></svg>
           </div>
-          <h3>Rent Ready Showcasing</h3>
-          <p class="service-desc">Preparing a rental or listing a property? We handle the haul-out, deep cleanout, and detail work that gets a space show-ready fast — so your unit rents or sells at top value.</p>
-          <span class="service-tag">Landlords &amp; Property Managers</span>
+          <h3>Rental Turnover &amp; Rent-Ready</h3>
+          <p class="service-desc">Property cleanouts, cleanup, presentation preparation, and exterior improvements for landlords, property managers, and real estate professionals.</p>
+          <span class="service-link">Learn More <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </div>
-      </div>
+      </a>
 
-      <!-- Pressure Washing -->
-      <div class="service-card reveal reveal-d3">
-        <img src="images/IMG_5826.JPG" alt="Commercial pressure washing" class="service-photo">
-        <span class="service-number">04</span>
+      <!-- 4. Pressure Washing -->
+      <a href="services/pressure-washing.html" class="service-card gs-hidden">
+        <img src="images/%5B044705%5D.jpg" alt="Commercial roof pressure washing on Oahu" class="service-photo" loading="lazy">
         <div class="service-body">
           <div class="service-icon">
-            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 10h6l4 8"/>
-              <path d="M22 18l14 14"/>
-              <path d="M36 32l4 4-2 2-4-4"/>
-              <path d="M28 36l4 4"/>
-              <path d="M6 16c0-2 2-4 6-4"/>
-              <path d="M30 10c4 2 6 6 4 10"/>
-              <path d="M18 26l-8 8"/>
-              <circle cx="12" cy="36" r="2"/>
-            </svg>
+            <svg viewBox="0 0 48 48"><path d="M12 10h6l4 8"/><path d="M22 18l14 14"/><path d="M36 32l4 4-2 2-4-4"/><path d="M28 36l4 4"/><path d="M6 16c0-2 2-4 6-4"/><path d="M30 10c4 2 6 6 4 10"/><path d="M18 26l-8 8"/><circle cx="12" cy="36" r="2"/></svg>
           </div>
           <h3>Pressure Washing</h3>
-          <p class="service-desc">Commercial rooftops, driveways, sidewalks, building exteriors, fences, and decks blasted clean. We restore surfaces to like-new using professional-grade equipment and technique.</p>
-          <span class="service-tag">Residential &amp; Commercial</span>
+          <p class="service-desc">Driveways, sidewalks, patios, exterior surfaces, commercial properties, rooftops, and solar panels. Professional-grade equipment for lasting results.</p>
+          <span class="service-link">Learn More <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </div>
-      </div>
+      </a>
 
-      <!-- Landscaping -->
-      <div class="service-card full-width reveal">
-        <div class="landscaping-photos">
-          <img src="images/IMG_2867.JPG" alt="Hawaii landscape maintenance">
-          <img src="images/IMG_3162.JPG" alt="Residential tree and grounds care">
-          <img src="images/IMG_4130.JPG" alt="Lawn maintenance and care">
-        </div>
-        <span class="service-number">05</span>
+      <!-- 5. Landscaping -->
+      <a href="services/landscaping.html" class="service-card gs-hidden">
+        <img src="images/IMG_2867.JPG" alt="Landscaping and grounds maintenance on Oahu" class="service-photo" loading="lazy">
         <div class="service-body">
           <div class="service-icon">
-            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-              <path d="M24 40V20"/>
-              <path d="M24 20c0-8 8-14 8-14s0 10-8 14"/>
-              <path d="M24 28c0-6-8-10-8-10s2 8 8 10"/>
-              <path d="M12 40h24"/>
-              <path d="M8 40h32"/>
-            </svg>
+            <svg viewBox="0 0 48 48"><path d="M24 40V20"/><path d="M24 20c0-8 8-14 8-14s0 10-8 14"/><path d="M24 28c0-6-8-10-8-10s2 8 8 10"/><path d="M12 40h24"/></svg>
           </div>
-          <h3>Landscaping</h3>
-          <p class="service-desc">Lawn care, tree trimming, brush clearing, and grounds maintenance for residential and commercial properties across Hawaii. We keep your property looking its best year-round.</p>
-          <span class="service-tag">Residential &amp; Commercial</span>
+          <h3>Landscaping &amp; Grounds</h3>
+          <p class="service-desc">Lawn maintenance, overgrowth clearing, landscape cleanup, vegetation management, and exterior property upkeep for residential and commercial properties.</p>
+          <span class="service-link">Learn More <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </div>
-      </div>
+      </a>
+
+      <!-- 6. Office & Commercial Maintenance -->
+      <a href="services/commercial-maintenance.html" class="service-card gs-hidden">
+        <div class="service-placeholder">
+          <svg viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="28" rx="2"/><path d="M6 18h36"/><path d="M16 10V6h16v4"/><path d="M18 26h12M18 32h8"/></svg>
+        </div>
+        <div class="service-body">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="28" rx="2"/><path d="M6 18h36"/><path d="M16 10V6h16v4"/><path d="M18 26h12M18 32h8"/></svg>
+          </div>
+          <h3>Office &amp; Commercial Maintenance</h3>
+          <p class="service-desc">Office cleaning, common-area care, property upkeep, routine cleaning, and maintenance support for commercial clients across Oahu.</p>
+          <span class="service-link">Learn More <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
 
     </div>
   </div>
 </section>
 
-<!-- PHOTO GALLERY -->
-<section id="gallery">
+<!-- ============================================================
+     OUR WORK
+     ============================================================ -->
+<section id="work">
   <div class="container">
-    <div class="gallery-header reveal">
+    <div class="section-header gs-hidden">
       <div class="section-label">Our Work</div>
       <h2>Real Jobs. Real Results.</h2>
-      <p class="section-sub">A look at what KLS Services does every day across Hawaii — pressure washing, landscaping, and property services.</p>
+      <p class="section-sub">A look at what KLS Services does across Oahu — pressure washing, landscaping, and property maintenance.</p>
     </div>
-    <div class="photo-grid">
-      <div class="photo-grid-item wide reveal">
-        <img src="images/%5B044705%5D.jpg" alt="Commercial warehouse roof pressure washing">
-        <div class="photo-caption">Commercial Roof Pressure Washing</div>
+    <div class="gallery-filters gs-hidden">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="pressure-washing">Pressure Washing</button>
+      <button class="filter-btn" data-filter="landscaping">Landscaping</button>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item gs-hidden" data-category="pressure-washing">
+        <img src="images/%5B044705%5D.jpg" alt="Commercial warehouse roof pressure washing on Oahu" loading="lazy">
+        <div class="gallery-caption"><span>Commercial Roof Pressure Washing</span></div>
       </div>
-      <div class="photo-grid-item reveal reveal-d1">
-        <img src="images/pressure%20wash%202_4.JPG" alt="Flat roof and solar panel pressure washing">
-        <div class="photo-caption">Solar Panel &amp; Roof Cleaning</div>
+      <div class="gallery-item gs-hidden" data-category="pressure-washing">
+        <img src="images/IMG_5826.JPG" alt="Rooftop pressure washing Honolulu commercial building" loading="lazy">
+        <div class="gallery-caption"><span>Commercial Rooftop &mdash; Honolulu</span></div>
       </div>
-      <div class="photo-grid-item reveal reveal-d2">
-        <img src="images/pressure%20wash%201_9.JPG" alt="Pressure washing solar panels">
-        <div class="photo-caption">Pressure Washing Services</div>
+      <div class="gallery-item gs-hidden" data-category="pressure-washing">
+        <img src="images/pressure%20wash%202_4.JPG" alt="Solar panel and flat roof pressure washing" loading="lazy">
+        <div class="gallery-caption"><span>Solar Panel &amp; Roof Cleaning</span></div>
       </div>
-      <div class="photo-grid-item reveal reveal-d3">
-        <img src="images/IMG_5826.JPG" alt="Rooftop pressure washing Honolulu">
-        <div class="photo-caption">Commercial Rooftop — Honolulu</div>
+      <div class="gallery-item gs-hidden" data-category="pressure-washing">
+        <img src="images/pressure%20wash%201_9.JPG" alt="Pressure washing solar panels on residential roof" loading="lazy">
+        <div class="gallery-caption"><span>Residential Solar Panel Cleaning</span></div>
       </div>
-      <div class="photo-grid-item wide reveal reveal-d1">
-        <img src="images/IMG_2867.JPG" alt="Hawaii landscape maintenance">
-        <div class="photo-caption">Landscaping &amp; Grounds</div>
+      <div class="gallery-item gs-hidden" data-category="landscaping">
+        <img src="images/IMG_2867.JPG" alt="Landscaped property with mountain backdrop, Oahu" loading="lazy">
+        <div class="gallery-caption"><span>Landscape Maintenance</span></div>
+      </div>
+      <div class="gallery-item gs-hidden" data-category="landscaping">
+        <img src="images/IMG_3162.JPG" alt="Residential property with manicured hedges and tall tree" loading="lazy">
+        <div class="gallery-caption"><span>Residential Grounds Care</span></div>
+      </div>
+      <div class="gallery-item gs-hidden" data-category="landscaping">
+        <img src="images/IMG_4130.JPG" alt="Freshly maintained green lawn" loading="lazy">
+        <div class="gallery-caption"><span>Lawn Maintenance</span></div>
+      </div>
+      <div class="gallery-item gs-hidden" data-category="landscaping">
+        <img src="images/IMG_8930.JPG" alt="Ground cover maintenance and weed control" loading="lazy">
+        <div class="gallery-caption"><span>Ground Cover Maintenance</span></div>
+      </div>
+      <div class="gallery-item gs-hidden" data-category="landscaping">
+        <img src="images/IMG_5077.JPG" alt="Tree canopy maintenance" loading="lazy">
+        <div class="gallery-caption"><span>Tree &amp; Canopy Care</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY KLS -->
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close image viewer">
+    <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
+  <img src="" alt="" id="lightboxImg">
+</div>
+
+<!-- ============================================================
+     WHY CHOOSE KLS
+     ============================================================ -->
 <section id="why">
   <div class="container">
     <div class="why-layout">
-      <div class="why-text reveal">
+      <div class="why-text gs-hidden">
         <div class="section-label">Why Choose KLS</div>
-        <h2>Built on Hard Work,<br>Backed by Results</h2>
+        <h2>One Team. Multiple<br>Property Solutions.</h2>
         <p>KLS Services was built on a simple idea: show up on time, do the work right, and leave every property better than we found it. We handle the heavy lifting so you don't have to.</p>
-        <p>Every job — from a quick garage cleanout to a full commercial property haul — gets the same professional crew, the same straight pricing, and the same commitment to doing it right the first time.</p>
+        <p>Whether it's a quick garage cleanout, a full rental turnover, ongoing landscape maintenance, or a commercial property wash — you get the same professional crew, clear communication, and straightforward pricing every time.</p>
       </div>
       <div class="why-features">
-        <div class="why-feature reveal reveal-d1">
+        <div class="why-feature gs-hidden">
           <div class="why-feature-icon">
-            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-              <path d="M16 4l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z"/>
-            </svg>
+            <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="12"/><path d="M16 8v8l5 3"/></svg>
           </div>
-          <h4>Licensed &amp; Insured</h4>
-          <p>Full coverage on every job. Your property is protected.</p>
+          <h4>Convenient Scheduling</h4>
+          <p>Flexible scheduling that works around your timeline and property needs.</p>
         </div>
-        <div class="why-feature reveal reveal-d2">
+        <div class="why-feature gs-hidden">
           <div class="why-feature-icon">
-            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="16" cy="16" r="12"/><path d="M16 8v8l5 3"/>
-            </svg>
-          </div>
-          <h4>Same-Day Service</h4>
-          <p>Need it gone fast? We offer same-day and next-day scheduling.</p>
-        </div>
-        <div class="why-feature reveal reveal-d3">
-          <div class="why-feature-icon">
-            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 16h24M16 4l12 12-12 12"/>
-            </svg>
+            <svg viewBox="0 0 32 32"><path d="M4 16h24M16 4l12 12-12 12"/></svg>
           </div>
           <h4>Upfront Pricing</h4>
-          <p>No surprises. You know the cost before we start any work.</p>
+          <p>No surprises. You know the cost before any work begins.</p>
         </div>
-        <div class="why-feature reveal reveal-d4">
+        <div class="why-feature gs-hidden">
           <div class="why-feature-icon">
-            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-              <path d="M16 4C9.4 4 4 9.4 4 16s5.4 12 12 12 12-5.4 12-12S22.6 4 16 4z"/>
-              <path d="M10 16l4 4 8-8"/>
-            </svg>
+            <svg viewBox="0 0 32 32"><rect x="4" y="4" width="10" height="10" rx="1"/><rect x="18" y="4" width="10" height="10" rx="1"/><rect x="4" y="18" width="10" height="10" rx="1"/><rect x="18" y="18" width="10" height="10" rx="1"/></svg>
+          </div>
+          <h4>Broad Service Coverage</h4>
+          <p>Multiple property services under one roof, one call, one team.</p>
+        </div>
+        <div class="why-feature gs-hidden">
+          <div class="why-feature-icon">
+            <svg viewBox="0 0 32 32"><path d="M10 16l4 4 8-8"/><circle cx="16" cy="16" r="12"/></svg>
+          </div>
+          <h4>Clear Communication</h4>
+          <p>Know what's happening every step of the way — no runaround.</p>
+        </div>
+        <div class="why-feature gs-hidden">
+          <div class="why-feature-icon">
+            <svg viewBox="0 0 32 32"><path d="M16 4C9.4 4 4 9.4 4 16s5.4 12 12 12 12-5.4 12-12S22.6 4 16 4z"/><path d="M16 8v8"/><circle cx="16" cy="22" r="1"/></svg>
           </div>
           <h4>Eco-Responsible</h4>
           <p>We sort for donation and recycling before anything hits the landfill.</p>
         </div>
-        <div class="why-feature reveal">
+        <div class="why-feature gs-hidden">
           <div class="why-feature-icon">
-            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-              <rect x="4" y="4" width="10" height="10" rx="1"/>
-              <rect x="18" y="4" width="10" height="10" rx="1"/>
-              <rect x="4" y="18" width="10" height="10" rx="1"/>
-              <rect x="18" y="18" width="10" height="10" rx="1"/>
-            </svg>
-          </div>
-          <h4>Res. &amp; Commercial</h4>
-          <p>Homes, rentals, offices, and commercial properties — all covered.</p>
-        </div>
-        <div class="why-feature reveal reveal-d1">
-          <div class="why-feature-icon">
-            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 28V14l8-10 8 10v14"/><path d="M12 28v-8h8v8"/>
-            </svg>
+            <svg viewBox="0 0 32 32"><path d="M8 28V14l8-10 8 10v14"/><path d="M12 28v-8h8v8"/></svg>
           </div>
           <h4>Locally Owned</h4>
-          <p>A real Hawaii business with a real commitment to this community.</p>
+          <p>A real Oahu business with a real commitment to this community.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
+<!-- ============================================================
+     HOW IT WORKS
+     ============================================================ -->
 <section id="process">
   <div class="container">
-    <div class="section-header reveal" style="text-align:center;">
-      <div class="section-label">The Process</div>
+    <div class="section-header gs-hidden" style="text-align:center;">
+      <div class="section-label">How It Works</div>
       <h2>Simple. Fast. Done.</h2>
-      <p class="section-sub" style="margin:14px auto 0;">Getting the job done shouldn't be complicated. Here's how it works.</p>
+      <p class="section-sub" style="margin:14px auto 0;">Getting the job done shouldn't be complicated.</p>
     </div>
     <div class="process-steps">
-      <div class="process-step reveal">
+      <div class="process-line"><div class="process-line-fill" id="processLineFill"></div></div>
+      <div class="process-step gs-hidden">
         <div class="step-num">1</div>
         <h4>Request a Quote</h4>
-        <p>Call or message us. Tell us what needs to go and where you're located.</p>
+        <p>Call or fill out our form. Tell us what needs to be done and where you're located on Oahu.</p>
       </div>
-      <div class="process-step reveal reveal-d1">
+      <div class="process-step gs-hidden">
         <div class="step-num">2</div>
-        <h4>Get a Price</h4>
-        <p>We give you a straight, no-obligation estimate before any work begins.</p>
+        <h4>Receive an Estimate</h4>
+        <p>We give you a straightforward, no-obligation estimate before any work begins.</p>
       </div>
-      <div class="process-step reveal reveal-d2">
+      <div class="process-step gs-hidden">
         <div class="step-num">3</div>
-        <h4>We Show Up</h4>
-        <p>A professional KLS crew arrives on schedule, ready to work.</p>
+        <h4>Schedule Service</h4>
+        <p>Pick a time that works for you. A professional KLS crew arrives on schedule, ready to work.</p>
       </div>
-      <div class="process-step reveal reveal-d3">
+      <div class="process-step gs-hidden">
         <div class="step-num">4</div>
-        <h4>Space Cleared</h4>
-        <p>Your property is left clean, cleared, and ready for whatever's next.</p>
+        <h4>Project Complete</h4>
+        <p>Your property is left clean, cleared, and ready for whatever comes next.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
+<!-- ============================================================
+     SERVICE AREAS
+     ============================================================ -->
+<section id="areas">
+  <div class="container">
+    <div class="areas-layout">
+      <div class="areas-text gs-hidden">
+        <div class="section-label">Where We Work</div>
+        <h2>Serving Communities<br>Across Oahu</h2>
+        <p>KLS Services provides junk removal, property cleanouts, pressure washing, landscaping, and commercial maintenance to residential and commercial properties throughout the island.</p>
+        <ul class="areas-list">
+          <li>Honolulu</li>
+          <li>Kapolei</li>
+          <li>Ewa Beach</li>
+          <li>Pearl City</li>
+          <li>Aiea</li>
+          <li>Kaneohe</li>
+          <li>Kailua</li>
+          <li>Mililani</li>
+          <li>Waipahu</li>
+          <li>Hawaii Kai</li>
+        </ul>
+      </div>
+      <div class="areas-highlight gs-hidden">
+        <div class="section-label">Property Managers &amp; Commercial Clients</div>
+        <h3>One Provider for All<br>Your Property Needs</h3>
+        <p>Managing multiple properties on Oahu? KLS Services supports property managers and commercial clients with recurring service relationships, rental turnovers, and coordinated maintenance — all through one dependable team.</p>
+        <p>Stop juggling multiple vendors. One call handles junk removal, cleanouts, pressure washing, landscaping, and building maintenance across your entire portfolio.</p>
+        <a href="#quote" class="btn-primary">Request a Property Management Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     QUOTE FORM
+     ============================================================ -->
+<section id="quote">
+  <div class="container">
+    <div class="quote-layout">
+      <div class="quote-text gs-hidden">
+        <div class="section-label">Contact Us</div>
+        <h2>Get Your Free<br>Estimate Today</h2>
+        <p>No commitment required. Tell us about your project and we'll get back to you with a straightforward price.</p>
+
+        <div class="quote-contact-item">
+          <div class="quote-contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <span>Phone</span>
+            <a href="tel:+18085366075">808-536-6075</a>
+          </div>
+        </div>
+
+        <div class="quote-contact-item">
+          <div class="quote-contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <span>Service Area</span>
+            <a href="#areas">Oahu, Hawaii</a>
+          </div>
+        </div>
+
+        <div class="quote-contact-item">
+          <div class="quote-contact-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div>
+            <span>Website</span>
+            <a href="#">HawaiiKLS.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote-form gs-hidden" id="quoteFormContainer">
+        <form id="quoteForm" action="https://formspree.io/f/myekogob" method="POST" novalidate>
+          <h3>Request a Free Estimate</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name <span class="req">*</span></label>
+              <input type="text" id="name" name="name" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" required autocomplete="tel">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="service">Service Needed <span class="req">*</span></label>
+              <select id="service" name="service" required>
+                <option value="">Select a service...</option>
+                <option value="junk-removal">Junk Removal</option>
+                <option value="property-cleanout">Hoarder &amp; Property Cleanouts</option>
+                <option value="rental-turnover">Rental Turnover &amp; Rent-Ready</option>
+                <option value="pressure-washing">Pressure Washing</option>
+                <option value="landscaping">Landscaping &amp; Grounds</option>
+                <option value="commercial">Office &amp; Commercial Maintenance</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="address">Property Address or Neighborhood</label>
+              <input type="text" id="address" name="address" placeholder="e.g., Kailua, Honolulu">
+            </div>
+            <div class="form-group">
+              <label for="proptype">Property Type</label>
+              <select id="proptype" name="property_type">
+                <option value="">Select type...</option>
+                <option value="residential">Residential</option>
+                <option value="commercial">Commercial</option>
+                <option value="rental">Rental Property</option>
+                <option value="hoa">HOA / Common Area</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group full">
+              <label for="description">Project Description</label>
+              <textarea id="description" name="description" placeholder="Tell us about your project..."></textarea>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="timeframe">Preferred Timeframe</label>
+              <select id="timeframe" name="timeframe">
+                <option value="">Select timeframe...</option>
+                <option value="asap">As soon as possible</option>
+                <option value="this-week">This week</option>
+                <option value="next-week">Next week</option>
+                <option value="this-month">This month</option>
+                <option value="flexible">Flexible</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <!-- Honeypot for spam protection -->
+              <label for="website" style="display:none;">Website</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" style="display:none;">
+            </div>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn-primary">Submit Estimate Request</button>
+          </div>
+          <p class="form-note">We typically respond within one business day. For immediate assistance, call 808-536-6075.</p>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <h3>Request Received</h3>
+          <p>We'll review your project details and get back to you shortly. For immediate assistance, call 808-536-6075.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FINAL CTA
+     ============================================================ -->
 <section id="cta">
   <div class="container">
     <div class="cta-inner">
-      <div class="cta-text reveal">
+      <div class="cta-text gs-hidden">
         <div class="section-label">Ready to Get Started?</div>
         <h2>Get Your Free Quote Today</h2>
-        <p>No commitment required. We'll give you a straight price and get the job scheduled fast. Same-day and next-day availability across Hawaii.</p>
+        <p>No commitment required. We'll give you a straight price and get the job scheduled. Junk removal, cleanouts, pressure washing, landscaping, and commercial maintenance — all handled by one team on Oahu.</p>
       </div>
-      <div class="cta-actions reveal reveal-d2">
+      <div class="cta-actions gs-hidden">
         <a href="tel:+18085366075" class="phone-link">808-536-6075</a>
-        <div class="cta-note">Call or text anytime</div>
-        <a href="mailto:info@knowleapstrategies.com" class="btn-primary" style="margin-top:8px; text-align:center;">Email Us</a>
+        <div class="cta-note">Call or text for a free estimate</div>
+        <a href="#quote" class="btn-primary" style="margin-top:8px; text-align:center;">Request a Quote Online</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
 <footer>
   <div class="container">
-    <div class="footer-inner">
-      <div class="footer-logo">
-        <img src="images/kls-services-logo.jpg" alt="KLS Services">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <img src="images/hawaiikls-logo.jpg" alt="KLS Services" width="200" height="200">
+        <div class="footer-tagline">Property Care &amp; Maintenance</div>
+        <div class="footer-domain">HawaiiKLS.com</div>
+        <p class="footer-serving">Serving residential and commercial properties across Oahu, Hawaii.</p>
       </div>
-      <div class="footer-services">
-        <span>Junk Removal</span>
-        <span>Hoarder Cleanouts</span>
-        <span>Rent Ready</span>
-        <span>Pressure Washing</span>
-        <span>Landscaping</span>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services/junk-removal.html">Junk Removal</a></li>
+          <li><a href="services/hoarder-cleanouts.html">Property Cleanouts</a></li>
+          <li><a href="services/rental-turnover.html">Rental Turnover</a></li>
+          <li><a href="services/pressure-washing.html">Pressure Washing</a></li>
+          <li><a href="services/landscaping.html">Landscaping</a></li>
+          <li><a href="services/commercial-maintenance.html">Commercial Maintenance</a></li>
+        </ul>
       </div>
-      <div class="footer-copy">&copy; 2025 KLS Services. All rights reserved.</div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#why">About KLS</a></li>
+          <li><a href="#work">Our Work</a></li>
+          <li><a href="#areas">Service Areas</a></li>
+          <li><a href="#quote">Contact</a></li>
+          <li><a href="#quote">Get a Quote</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+18085366075">808-536-6075</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Oahu, Hawaii</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; <script>document.write(new Date().getFullYear())</script> KLS Services. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="#hero">Back to Top</a>
+      </div>
     </div>
   </div>
 </footer>
 
-<script>
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  reveals.forEach(el => io.observe(el));
+<!-- ============================================================
+     MOBILE STICKY CTA
+     ============================================================ -->
+<div class="mobile-sticky-cta" id="mobileCta">
+  <a href="tel:+18085366075" class="mobile-call">Call Now</a>
+  <a href="#quote" class="mobile-quote">Free Quote</a>
+</div>
 
-  // Hero elements fire immediately
-  document.querySelectorAll('#hero .reveal').forEach((el, i) => {
-    setTimeout(() => el.classList.add('visible'), 80 + i * 130);
+<!-- ============================================================
+     SCRIPTS
+     ============================================================ -->
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script>
+(function() {
+  'use strict';
+
+  // ── Reduced Motion Check ──────────────────────────────
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ── GSAP Setup ────────────────────────────────────────
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Make content visible even if GSAP fails
+  function showAllContent() {
+    document.querySelectorAll('.gs-hidden').forEach(function(el) {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    });
+  }
+
+  try {
+    if (prefersReducedMotion) {
+      // Show everything immediately, no animation
+      showAllContent();
+    } else {
+      // ── Hero Entrance Sequence ──────────────────────────
+      var heroTl = gsap.timeline({ defaults: { ease: 'power2.out' } });
+      var heroEls = document.querySelectorAll('#hero .gs-hidden');
+
+      heroTl
+        .to(heroEls[0], { opacity: 1, y: 0, duration: 0.5 }, 0.2)  // eyebrow
+        .to(heroEls[1], { opacity: 1, y: 0, duration: 0.6 }, 0.35) // h1
+        .to(heroEls[2], { opacity: 1, y: 0, duration: 0.5 }, 0.55) // sub
+        .to(heroEls[3], { opacity: 1, y: 0, duration: 0.5 }, 0.7)  // actions
+        .to(heroEls[4], { opacity: 1, y: 0, duration: 0.4 }, 0.85) // trust
+        .to(heroEls[5], { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }, 0.5); // logo
+
+      // ── ScrollTrigger Reveals ───────────────────────────
+      var scrollEls = document.querySelectorAll('.gs-hidden:not(#hero .gs-hidden)');
+      scrollEls.forEach(function(el) {
+        gsap.to(el, {
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 88%',
+            once: true
+          },
+          opacity: 1,
+          y: 0,
+          duration: 0.55,
+          ease: 'power2.out'
+        });
+      });
+
+      // ── Service Cards Stagger ───────────────────────────
+      ScrollTrigger.batch('#services .service-card', {
+        start: 'top 88%',
+        onEnter: function(batch) {
+          gsap.to(batch, { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: 'power2.out' });
+        },
+        once: true
+      });
+
+      // ── Gallery Items Stagger ───────────────────────────
+      ScrollTrigger.batch('#work .gallery-item', {
+        start: 'top 90%',
+        onEnter: function(batch) {
+          gsap.to(batch, { opacity: 1, y: 0, duration: 0.5, stagger: 0.08, ease: 'power2.out' });
+        },
+        once: true
+      });
+
+      // ── Why Features Stagger ────────────────────────────
+      ScrollTrigger.batch('.why-feature', {
+        start: 'top 88%',
+        onEnter: function(batch) {
+          gsap.to(batch, { opacity: 1, y: 0, duration: 0.45, stagger: 0.08, ease: 'power2.out' });
+        },
+        once: true
+      });
+
+      // ── Process Steps + Line Animation ──────────────────
+      var processSection = document.getElementById('process');
+      if (processSection) {
+        ScrollTrigger.create({
+          trigger: processSection,
+          start: 'top 70%',
+          once: true,
+          onEnter: function() {
+            var fill = document.getElementById('processLineFill');
+            if (fill) {
+              gsap.to(fill, { width: '100%', duration: 1.2, ease: 'power2.inOut' });
+            }
+            var nums = processSection.querySelectorAll('.step-num');
+            nums.forEach(function(num, i) {
+              setTimeout(function() { num.classList.add('lit'); }, 300 * i);
+            });
+          }
+        });
+      }
+
+      // ── Credibility Bar Stagger ─────────────────────────
+      ScrollTrigger.batch('.cred-item', {
+        start: 'top 92%',
+        onEnter: function(batch) {
+          gsap.to(batch, { opacity: 1, y: 0, duration: 0.4, stagger: 0.1, ease: 'power2.out' });
+        },
+        once: true
+      });
+    }
+  } catch(e) {
+    // If GSAP fails, show all content
+    showAllContent();
+    console.warn('Animation error:', e);
+  }
+
+  // ── Sticky Nav ──────────────────────────────────────────
+  var nav = document.getElementById('siteNav');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 60) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  }, { passive: true });
+
+  // ── Mobile Navigation ───────────────────────────────────
+  var toggle = document.getElementById('navToggle');
+  var mobileNav = document.getElementById('mobileNav');
+
+  toggle.addEventListener('click', function() {
+    var isOpen = mobileNav.classList.toggle('open');
+    toggle.classList.toggle('active');
+    toggle.setAttribute('aria-expanded', isOpen);
   });
 
-  // Mobile nav
-  const toggle = document.getElementById('mobileToggle');
-  const mobileNav = document.getElementById('mobileNav');
-  toggle.addEventListener('click', () => mobileNav.classList.toggle('open'));
-  function closeMobileNav() { mobileNav.classList.remove('open'); }
-  document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', closeMobileNav));
+  function closeMobileNav() {
+    mobileNav.classList.remove('open');
+    toggle.classList.remove('active');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  document.querySelectorAll('.mobile-link').forEach(function(link) {
+    link.addEventListener('click', closeMobileNav);
+  });
+
+  // ── Gallery Filters ─────────────────────────────────────
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var galleryItems = document.querySelectorAll('.gallery-item');
+
+  filterBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      filterBtns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+
+      var filter = btn.getAttribute('data-filter');
+      galleryItems.forEach(function(item) {
+        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+          item.removeAttribute('data-hidden');
+          item.style.display = '';
+        } else {
+          item.setAttribute('data-hidden', 'true');
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // ── Lightbox ────────────────────────────────────────────
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightboxImg');
+  var lightboxClose = document.getElementById('lightboxClose');
+
+  galleryItems.forEach(function(item) {
+    item.addEventListener('click', function() {
+      var img = item.querySelector('img');
+      if (img) {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+    lightboxImg.src = '';
+  }
+
+  lightboxClose.addEventListener('click', function(e) {
+    e.stopPropagation();
+    closeLightbox();
+  });
+  lightbox.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+      closeLightbox();
+    }
+  });
+
+  // ── Form Handling ───────────────────────────────────────
+  var quoteForm = document.getElementById('quoteForm');
+  if (quoteForm) {
+    quoteForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Honeypot check
+      var honeypot = document.getElementById('website');
+      if (honeypot && honeypot.value) return;
+
+      // Basic validation
+      var name = document.getElementById('name');
+      var phone = document.getElementById('phone');
+      var service = document.getElementById('service');
+      var valid = true;
+
+      [name, phone, service].forEach(function(field) {
+        if (!field.value.trim()) {
+          field.style.borderColor = '#c0392b';
+          valid = false;
+        } else {
+          field.style.borderColor = '';
+        }
+      });
+
+      if (!valid) return;
+
+      // Submit to Formspree
+      var formData = new FormData(quoteForm);
+      var submitBtn = quoteForm.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      fetch(quoteForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(function(response) {
+        if (response.ok) {
+          quoteForm.style.display = 'none';
+          document.getElementById('formSuccess').style.display = 'block';
+        } else {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Submit Estimate Request';
+          alert('Something went wrong. Please call 808-536-6075 instead.');
+        }
+      }).catch(function() {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Estimate Request';
+        alert('Connection error. Please call 808-536-6075 instead.');
+      });
+    });
+  }
+
+  // ── Smooth Scroll for Mobile CTA ────────────────────────
+  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        var offset = 80;
+        var y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    });
+  });
+
+})();
 </script>
+
 </body>
 </html>
