@@ -4,3 +4,17 @@
 *.MP4
 *.avi
 *.AVI
+
+# Added by web-dev department
+# Claude Code
+.claude/
+CLAUDE.md
+CLAUDE.local.md
+# Credentials
+.env
+.env.*
+.gsc-credentials/
+credentials.json
+token.json
+*.pem
+*.key
